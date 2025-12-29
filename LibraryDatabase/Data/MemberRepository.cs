@@ -10,7 +10,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
         var members = new List<Member>();
 
         using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Members", connection);
+        using var command = new SqlCommand("SELECT * FROM Member", connection);
         
         connection.Open();
         using var reader = command.ExecuteReader();
@@ -32,13 +32,17 @@ public class MemberRepository : BaseRepository, IRepository<Member>
     public Member? GetById(int id)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Members WHERE MemberID = @id", connection);
+        using var command = new SqlCommand("SELECT * FROM Member WHERE MemberID = @id", connection);
         
         command.Parameters.AddWithValue("@id", id);
         connection.Open();
         
         using var reader = command.ExecuteReader();
-        if (!reader.Read()) return null;
+
+        if (!reader.Read())
+        {
+            return null;
+        }
 
         var member = new Member
         {
@@ -54,7 +58,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
     public void Add(Member entity)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("INSERT INTO Members(firstName, lastName, email) VALUES(@firstName, @lastName, @email)", connection);
+        using var command = new SqlCommand("INSERT INTO Member(firstName, lastName, email) VALUES(@firstName, @lastName, @email)", connection);
         
         command.Parameters.AddWithValue("@firstName", entity.FirstName);
         command.Parameters.AddWithValue("@lastName", entity.LastName);
@@ -67,7 +71,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
     public void Update(Member entity)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("UPDATE Members SET firstName=@firstName,lastName=@lastName,email=@email WHERE id=@id", connection);
+        using var command = new SqlCommand("UPDATE Member SET firstName=@firstName,lastName=@lastName,email=@email WHERE id=@id", connection);
         
         command.Parameters.AddWithValue("@firstName", entity.FirstName);
         command.Parameters.AddWithValue("@lastName", entity.LastName);
@@ -81,7 +85,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
     public void Delete(int id)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("DELETE FROM Members WHERE MemberID = @id", connection);
+        using var command = new SqlCommand("DELETE FROM Member WHERE MemberID = @id", connection);
         
         command.Parameters.AddWithValue("@id", id);
         
