@@ -54,7 +54,7 @@ public class CategoryRepository : BaseRepository, IRepository<Category>
     public void Add(Category entity)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("INSERT INTO Category(Name) VALUES (@Name)", connection);
+        using var command = new SqlCommand("INSERT INTO Category(name) VALUES (@Name)", connection);
         
         command.Parameters.AddWithValue("@Name", entity.CategoryName);
         
@@ -64,12 +64,26 @@ public class CategoryRepository : BaseRepository, IRepository<Category>
 
     public void Update(Category entity)
     {
-        using var connection = GetConnection();
-        using var command = new SqlCommand("UPDATE Category SET Name=@Name WHERE id=@id", connection);
+        var updates = new List<string>();
+        var command = new SqlCommand();
+
+        if (!string.IsNullOrEmpty(entity.CategoryName))
+        {
+            updates.Add("name=@name");
+            command.Parameters.AddWithValue("@name", entity.CategoryName);
+        }
+
+        if (updates.Count == 0)
+        {
+            return;
+        }
         
-        command.Parameters.AddWithValue("@Name", entity.CategoryName);
+        command.CommandText = $"UPDATE Category SET {string.Join(", ", updates)} WHERE id = @id";
+        
         command.Parameters.AddWithValue("@id", entity.CategoryId);
         
+        using var connection = GetConnection();
+        command.Connection = connection;
         connection.Open();
         command.ExecuteNonQuery();
     }

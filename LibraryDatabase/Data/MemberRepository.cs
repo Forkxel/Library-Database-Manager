@@ -68,16 +68,40 @@ public class MemberRepository : BaseRepository, IRepository<Member>
         command.ExecuteNonQuery();
     }
 
-    public void Update(Member entity)
+    public void Update(Member member)
     {
+        var updates = new List<string>();
+        var command = new SqlCommand();
+
+        if (!string.IsNullOrWhiteSpace(member.FirstName))
+        {
+            updates.Add("firstName = @firstName");
+            command.Parameters.AddWithValue("@firstName", member.FirstName);
+        }
+
+        if (!string.IsNullOrWhiteSpace(member.LastName))
+        {
+            updates.Add("lastName = @lastName");
+            command.Parameters.AddWithValue("@lastName", member.LastName);
+        }
+
+        if (!string.IsNullOrWhiteSpace(member.Email))
+        {
+            updates.Add("email = @email");
+            command.Parameters.AddWithValue("@email", member.Email);
+        }
+
+        if (updates.Count == 0)
+        {
+            return;
+        }
+
+        command.CommandText = $"UPDATE Member SET {string.Join(", ", updates)} WHERE id = @id";
+
+        command.Parameters.AddWithValue("@id", member.MemberID);
+
         using var connection = GetConnection();
-        using var command = new SqlCommand("UPDATE Member SET firstName=@firstName,lastName=@lastName,email=@email WHERE id=@id", connection);
-        
-        command.Parameters.AddWithValue("@firstName", entity.FirstName);
-        command.Parameters.AddWithValue("@lastName", entity.LastName);
-        command.Parameters.AddWithValue("@email", entity.Email);
-        command.Parameters.AddWithValue("@id", entity.MemberID);
-        
+        command.Connection = connection;
         connection.Open();
         command.ExecuteNonQuery();
     }

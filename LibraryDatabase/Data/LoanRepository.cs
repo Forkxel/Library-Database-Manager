@@ -73,15 +73,44 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
 
     public void Update(Loan entity)
     {
-        using var connection = GetConnection();
-        using var command = new SqlCommand("UPDATE Loan SET memberId=@memberId,bookId=@bookId,loanDate=@loanDate,returnDate=@returnDate WHERE id=@id", connection);
+        var updates = new List<string>();
+        var command = new SqlCommand();
+
+        if (entity.MemberId.HasValue)
+        {
+            updates.Add("memberId=@memberId");
+            command.Parameters.AddWithValue("@memberId", entity.MemberId.Value);
+        }
+
+        if (entity.BookId.HasValue)
+        {
+            updates.Add("bookId=@bookId");
+            command.Parameters.AddWithValue("@bookId", entity.BookId.Value);
+        }
+
+        if (entity.LoanDate.HasValue)
+        {
+            updates.Add("loanDate=@loanDate");
+            command.Parameters.AddWithValue("@loanDate", entity.LoanDate.Value);
+        }
+
+        if (entity.ReturnDate.HasValue)
+        {
+            updates.Add("returnDate=@returnDate");
+            command.Parameters.AddWithValue("@returnDate", entity.ReturnDate.Value);
+        }
+
+        if (updates.Count == 0)
+        {
+            return;
+        }
         
-        command.Parameters.AddWithValue("@memberId", entity.LoanId);
-        command.Parameters.AddWithValue("@bookId", entity.BookId);
-        command.Parameters.AddWithValue("@loanDate", entity.LoanDate);
-        command.Parameters.AddWithValue("@returnDate", entity.ReturnDate);
+        command.CommandText = $"UPDATE Loan SET {string.Join(", ", updates)} WHERE id = @id";
+        
         command.Parameters.AddWithValue("@id", entity.LoanId);
         
+        using var connection = GetConnection();
+        command.Connection = connection;
         connection.Open();
         command.ExecuteNonQuery();
     }

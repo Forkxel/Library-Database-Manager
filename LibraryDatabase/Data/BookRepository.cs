@@ -76,20 +76,53 @@ public class BookRepository : BaseRepository, IRepository<Book>
         command.ExecuteNonQuery();
     }
 
-    public void Update(Book entity)
+    public void Update(Book book)
     {
-        using var connection = GetConnection();
-        using var command = new SqlCommand(
-            "UPDATE Book SET title = @title,categoryId=@categoryId,authorId=@authorId,isAvailable=@isAvailable,price=@price WHERE id=@id", connection);
-        
-        command.Parameters.AddWithValue("@id", entity.BookId);
-        command.Parameters.AddWithValue("@title", entity.BookTitle);
-        command.Parameters.AddWithValue("@categoryId", entity.CategoryId);
-        command.Parameters.AddWithValue("@authorId", entity.AuthorId);
-        command.Parameters.AddWithValue("@isAvailable", entity.isAvailable);
-        command.Parameters.AddWithValue("@price", entity.Price);
-        
-        connection.Open();
+        var updates = new List<string>();
+        var command = new SqlCommand();
+
+        if (!string.IsNullOrWhiteSpace(book.BookTitle))
+        {
+            updates.Add("title = @title");
+            command.Parameters.AddWithValue("@title", book.BookTitle);
+        }
+
+        if (book.AuthorId.HasValue)
+        {
+            updates.Add("authorID = @authorID");
+            command.Parameters.AddWithValue("@authorID", book.AuthorId.Value);
+        }
+
+        if (book.CategoryId.HasValue)
+        {
+            updates.Add("categoryID = @categoryID");
+            command.Parameters.AddWithValue("@categoryID", book.CategoryId.Value);
+        }
+
+        if (book.Price.HasValue)
+        {
+            updates.Add("price = @price");
+            command.Parameters.AddWithValue("@price", book.Price.Value);
+        }
+
+        if (book.isAvailable.HasValue)
+        {
+            updates.Add("isAvailable = @isAvailable");
+            command.Parameters.AddWithValue("@isAvailable", book.isAvailable.Value);
+        }
+
+        if (updates.Count == 0)
+        {
+            return;
+        }
+
+        command.CommandText = $"UPDATE Book SET {string.Join(", ", updates)} WHERE id = @id";
+
+        command.Parameters.AddWithValue("@id", book.BookId);
+
+        using var conn = GetConnection();
+        command.Connection = conn;
+        conn.Open();
         command.ExecuteNonQuery();
     }
 

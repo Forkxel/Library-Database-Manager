@@ -2,15 +2,15 @@
 
 public class Book
 {
-    private float price;
+    private float? price;
     
     public int BookId { get; set; }
-    public string BookTitle { get; set; }
-    public int CategoryId { get; set; }
-    public int AuthorId { get; set; }
-    public bool isAvailable { get; set; }
+    public string? BookTitle { get; set; }
+    public int? CategoryId { get; set; }
+    public int? AuthorId { get; set; }
+    public bool? isAvailable { get; set; }
 
-    public float Price
+    public float? Price
     {
         get { return price; }
         set

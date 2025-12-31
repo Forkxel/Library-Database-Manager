@@ -67,13 +67,32 @@ public class AuthorRepository : BaseRepository, IRepository<Author>
 
     public void Update(Author entity)
     {
-        using var connection = GetConnection();
-        using var command = new SqlCommand("UPDATE Author SET firstName=@firstName,lastName=@lastName WHERE id=@id", connection);
+        var updates = new List<string>();
+        var command = new SqlCommand();
+
+        if (!string.IsNullOrWhiteSpace(entity.FirstName))
+        {
+            updates.Add("firstName = @firstName");
+            command.Parameters.AddWithValue("@firstName", entity.FirstName);
+        }
+
+        if (!string.IsNullOrWhiteSpace(entity.LastName))
+        {
+            updates.Add("lastName = @lastName");
+            command.Parameters.AddWithValue("@lastName", entity.LastName);
+        }
+
+        if (updates.Count == 0)
+        {
+            return;
+        }
         
-        command.Parameters.AddWithValue("@firstName", entity.FirstName);
-        command.Parameters.AddWithValue("@lastName", entity.LastName);
+        command.CommandText = $"UPDATE Loan SET {string.Join(", ", updates)} WHERE id = @id";
+        
         command.Parameters.AddWithValue("@id", entity.AuthorID);
         
+        using var connection = GetConnection();
+        command.Connection = connection;
         connection.Open();
         command.ExecuteNonQuery();
     }
