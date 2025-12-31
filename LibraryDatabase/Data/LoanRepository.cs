@@ -62,7 +62,7 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         using var connection = GetConnection();
         using var command = new SqlCommand("INSERT INTO Loan(memberId,bookId,loanDate,returnDate) VALUES (@memberId,@bookId,@loanDate,@returnDate)", connection);
         
-        command.Parameters.AddWithValue("@memberId", entity.LoanId);
+        command.Parameters.AddWithValue("@memberId", entity.MemberId);
         command.Parameters.AddWithValue("@bookId", entity.BookId);
         command.Parameters.AddWithValue("@loanDate", entity.LoanDate);
         command.Parameters.AddWithValue("@returnDate", entity.ReturnDate);
@@ -125,4 +125,75 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         connection.Open();
         command.ExecuteNonQuery();
     }
+    
+    public void BorrowBook(int bookId, int memberId)
+    {
+        using var connection = GetConnection();
+        connection.Open();
+
+        using var transaction = connection.BeginTransaction();
+
+        try
+        {
+            var insertLoan = new SqlCommand("INSERT INTO Loan (memberId, bookId, loanDate) VALUES (@memberId, @bookId, GETDATE())",connection, transaction);
+
+            insertLoan.Parameters.AddWithValue("@memberId", memberId);
+            insertLoan.Parameters.AddWithValue("@bookId", bookId);
+            insertLoan.ExecuteNonQuery();
+
+            var updateBook = new SqlCommand("UPDATE Book SET IsAvailable = 0 WHERE id = @id", connection, transaction);
+
+            updateBook.Parameters.AddWithValue("@id", bookId);
+            updateBook.ExecuteNonQuery();
+
+            transaction.Commit();
+        }
+        catch
+        {
+            transaction.Rollback();
+            throw;
+        }
+    }
+    
+    public void ReturnBook(int loanId)
+    {
+        using var connection = GetConnection();
+        connection.Open();
+
+        using var transaction = connection.BeginTransaction();
+
+        try
+        {
+            var getBookCmd = new SqlCommand("SELECT bookId FROM Loan WHERE id = @id AND returnDate IS NULL", connection, transaction);
+
+            getBookCmd.Parameters.AddWithValue("@id", loanId);
+
+            var bookIdObj = getBookCmd.ExecuteScalar();
+
+            if (bookIdObj == null)
+            {
+                throw new Exception("Loan does not exist");
+            }
+
+            int bookId = (int)bookIdObj;
+            
+            var updateLoan = new SqlCommand("UPDATE Loan SET returnDate = GETDATE() WHERE id = @id", connection, transaction);
+
+            updateLoan.Parameters.AddWithValue("@id", loanId);
+            updateLoan.ExecuteNonQuery();
+            
+            var updateBook = new SqlCommand("UPDATE Book SET IsAvailable = 1 WHERE id = @bookId", connection, transaction);
+
+            updateBook.Parameters.AddWithValue("@bookId", bookId);
+            updateBook.ExecuteNonQuery();
+
+            transaction.Commit();
+        }
+        catch
+        {
+            transaction.Rollback();
+            throw;
+        }
+    }
+
 }
