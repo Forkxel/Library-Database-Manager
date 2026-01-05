@@ -39,11 +39,13 @@ partial class BookUpdate
         comboBoxState = new System.Windows.Forms.ComboBox();
         textBox1 = new System.Windows.Forms.TextBox();
         button1 = new System.Windows.Forms.Button();
+        button2 = new System.Windows.Forms.Button();
+        textBoxID = new System.Windows.Forms.TextBox();
         SuspendLayout();
         // 
         // textBoxTitle
         // 
-        textBoxTitle.Location = new System.Drawing.Point(340, 75);
+        textBoxTitle.Location = new System.Drawing.Point(340, 82);
         textBoxTitle.Name = "textBoxTitle";
         textBoxTitle.PlaceholderText = "Title";
         textBoxTitle.Size = new System.Drawing.Size(100, 23);
@@ -103,18 +105,39 @@ partial class BookUpdate
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(340, 380);
+        button1.Location = new System.Drawing.Point(269, 380);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(100, 44);
         button1.TabIndex = 7;
         button1.Text = "OK";
         button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
+        // 
+        // button2
+        // 
+        button2.Location = new System.Drawing.Point(413, 380);
+        button2.Name = "button2";
+        button2.Size = new System.Drawing.Size(100, 44);
+        button2.TabIndex = 8;
+        button2.Text = "Cancel";
+        button2.UseVisualStyleBackColor = true;
+        button2.Click += button2_Click;
+        // 
+        // textBoxID
+        // 
+        textBoxID.Location = new System.Drawing.Point(340, 42);
+        textBoxID.Name = "textBoxID";
+        textBoxID.PlaceholderText = "ID to update";
+        textBoxID.Size = new System.Drawing.Size(100, 23);
+        textBoxID.TabIndex = 9;
         // 
         // BookUpdate
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(textBoxID);
+        Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBox1);
         Controls.Add(comboBoxState);
@@ -127,6 +150,10 @@ partial class BookUpdate
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.TextBox textBoxID;
+
+    private System.Windows.Forms.Button button2;
 
     private System.Windows.Forms.Button button1;
 

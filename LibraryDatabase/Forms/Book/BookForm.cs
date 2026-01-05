@@ -31,12 +31,20 @@ public partial class BookForm : Form
 
     private void UpdateButton_Click(object sender, EventArgs e)
     {
-        throw new System.NotImplementedException();
+        var updateForm = new BookUpdate();
+        if (updateForm.ShowDialog() == DialogResult.OK)
+        {
+            RefreshTable();
+        }
     }
 
     private void DeleteButton_Click(object sender, EventArgs e)
     {
-        throw new System.NotImplementedException();
+        var deleteForm = new BookDelete();
+        if (deleteForm.ShowDialog() == DialogResult.OK)
+        {
+            RefreshTable();
+        }
     }
 
     private void AddButton_Click(object sender, EventArgs e)
