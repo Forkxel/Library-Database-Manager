@@ -10,7 +10,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
         var members = new List<Member>();
 
         using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Member", connection);
+        using var command = new SqlCommand("SELECT * FROM Members", connection);
         
         connection.Open();
         using var reader = command.ExecuteReader();
@@ -32,7 +32,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
     public Member? GetById(int id)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Member WHERE MemberID = @id", connection);
+        using var command = new SqlCommand("SELECT * FROM Members WHERE MemberID = @id", connection);
         
         command.Parameters.AddWithValue("@id", id);
         connection.Open();
@@ -58,7 +58,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
     public void Add(Member entity)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("INSERT INTO Member(firstName, lastName, email) VALUES(@firstName, @lastName, @email)", connection);
+        using var command = new SqlCommand("INSERT INTO Members(firstName, lastName, email) VALUES(@firstName, @lastName, @email)", connection);
         
         command.Parameters.AddWithValue("@firstName", entity.FirstName);
         command.Parameters.AddWithValue("@lastName", entity.LastName);
@@ -96,7 +96,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
             return;
         }
 
-        command.CommandText = $"UPDATE Member SET {string.Join(", ", updates)} WHERE id = @id";
+        command.CommandText = $"UPDATE Members SET {string.Join(", ", updates)} WHERE id = @id";
 
         command.Parameters.AddWithValue("@id", member.MemberID);
 
@@ -109,7 +109,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
     public void Delete(int id)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("DELETE FROM Member WHERE MemberID = @id", connection);
+        using var command = new SqlCommand("DELETE FROM Members WHERE MemberID = @id", connection);
         
         command.Parameters.AddWithValue("@id", id);
         

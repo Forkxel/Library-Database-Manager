@@ -13,7 +13,16 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Forms\BookForm.cs">
+      <Compile Update="Forms\Book\BookAdd.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Book\BookDelete.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Book\BookForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Book\BookUpdate.cs">
         <SubType>Form</SubType>
       </Compile>
     </ItemGroup>

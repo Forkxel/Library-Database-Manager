@@ -25,7 +25,7 @@ public class BookRepository : BaseRepository, IRepository<Book>
                 CategoryId = reader.GetInt32(2),
                 AuthorId = reader.GetInt32(3),
                 isAvailable = reader.GetBoolean(4),
-                Price = reader.GetFloat(5),
+                Price = reader.GetDecimal(5),
                 State = Enum.Parse<State>(reader.GetString(6))
             });
         }
@@ -55,7 +55,7 @@ public class BookRepository : BaseRepository, IRepository<Book>
             CategoryId = reader.GetInt32(2),
             AuthorId = reader.GetInt32(3),
             isAvailable = reader.GetBoolean(4),
-            Price = reader.GetFloat(5),
+            Price = reader.GetDecimal(5),
             State = Enum.Parse<State>(reader.GetString(6))
         };
         

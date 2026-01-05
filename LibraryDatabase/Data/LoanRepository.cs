@@ -141,7 +141,7 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
             insertLoan.Parameters.AddWithValue("@bookId", bookId);
             insertLoan.ExecuteNonQuery();
 
-            var updateBook = new SqlCommand("UPDATE Book SET IsAvailable = 0 WHERE id = @id", connection, transaction);
+            var updateBook = new SqlCommand("UPDATE Book SET isAvailable = 0 WHERE id = @id", connection, transaction);
 
             updateBook.Parameters.AddWithValue("@id", bookId);
             updateBook.ExecuteNonQuery();
@@ -182,7 +182,7 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
             updateLoan.Parameters.AddWithValue("@id", loanId);
             updateLoan.ExecuteNonQuery();
             
-            var updateBook = new SqlCommand("UPDATE Book SET IsAvailable = 1 WHERE id = @bookId", connection, transaction);
+            var updateBook = new SqlCommand("UPDATE Book SET isAvailable = 1 WHERE id = @bookId", connection, transaction);
 
             updateBook.Parameters.AddWithValue("@bookId", bookId);
             updateBook.ExecuteNonQuery();

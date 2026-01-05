@@ -13,16 +13,16 @@ public class Book
     public bool? isAvailable { get; set; }
     public State? State { get; set; }
 
-    public float? Price
+    public decimal? Price
     {
-        get { return price; }
+        get { return (decimal?)price; }
         set
         {
             if (value < 0)
             {
                 throw new ArgumentException("Price cannot be less than 0");
             }
-            price = value;
+            price = (float?)value;
         }
     }
 }

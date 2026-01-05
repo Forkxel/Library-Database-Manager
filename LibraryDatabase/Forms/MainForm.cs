@@ -1,3 +1,5 @@
+using LibraryDatabase.Forms.Book;
+
 namespace LibraryDatabase;
 
 public partial class MainForm : Form
