@@ -126,6 +126,7 @@ partial class BookForm
         DeleteButton.TabIndex = 2;
         DeleteButton.Text = "Delete";
         DeleteButton.UseVisualStyleBackColor = true;
+        DeleteButton.Click += DeleteButton_Click;
         // 
         // AddButton
         // 
@@ -135,6 +136,7 @@ partial class BookForm
         AddButton.TabIndex = 3;
         AddButton.Text = "Add";
         AddButton.UseVisualStyleBackColor = true;
+        AddButton.Click += AddButton_Click;
         // 
         // BookForm
         // 

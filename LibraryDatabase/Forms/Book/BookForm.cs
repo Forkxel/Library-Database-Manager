@@ -33,4 +33,24 @@ public partial class BookForm : Form
     {
         throw new System.NotImplementedException();
     }
+
+    private void DeleteButton_Click(object sender, EventArgs e)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void AddButton_Click(object sender, EventArgs e)
+    {
+        var addForm = new BookAdd();
+        if (addForm.ShowDialog() == DialogResult.OK)
+        {
+            RefreshTable();
+        }
+    }
+
+    private void RefreshTable()
+    {
+        var repo = new BookRepository();
+        dataGridView1.DataSource = repo.GetAll();
+    }
 }

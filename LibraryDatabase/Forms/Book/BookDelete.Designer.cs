@@ -31,11 +31,41 @@ partial class BookDelete
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "BookDelete";
+        textBoxID = new System.Windows.Forms.TextBox();
+        button1 = new System.Windows.Forms.Button();
+        SuspendLayout();
+        // 
+        // textBoxID
+        // 
+        textBoxID.Location = new System.Drawing.Point(344, 143);
+        textBoxID.Name = "textBoxID";
+        textBoxID.PlaceholderText = "ID to delete";
+        textBoxID.Size = new System.Drawing.Size(117, 23);
+        textBoxID.TabIndex = 0;
+        // 
+        // button1
+        // 
+        button1.Location = new System.Drawing.Point(344, 341);
+        button1.Name = "button1";
+        button1.Size = new System.Drawing.Size(117, 40);
+        button1.TabIndex = 1;
+        button1.Text = "OK";
+        button1.UseVisualStyleBackColor = true;
+        // 
+        // BookDelete
+        // 
+        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(button1);
+        Controls.Add(textBoxID);
+        Text = "Delete book";
+        ResumeLayout(false);
+        PerformLayout();
     }
+
+    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.TextBox textBoxID;
 
     #endregion
 }
