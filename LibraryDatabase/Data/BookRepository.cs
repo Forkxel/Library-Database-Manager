@@ -25,7 +25,8 @@ public class BookRepository : BaseRepository, IRepository<Book>
                 CategoryId = reader.GetInt32(2),
                 AuthorId = reader.GetInt32(3),
                 isAvailable = reader.GetBoolean(4),
-                Price = reader.GetFloat(5)
+                Price = reader.GetFloat(5),
+                State = Enum.Parse<State>(reader.GetString(6))
             });
         }
         
@@ -54,7 +55,8 @@ public class BookRepository : BaseRepository, IRepository<Book>
             CategoryId = reader.GetInt32(2),
             AuthorId = reader.GetInt32(3),
             isAvailable = reader.GetBoolean(4),
-            Price = reader.GetFloat(5)
+            Price = reader.GetFloat(5),
+            State = Enum.Parse<State>(reader.GetString(6))
         };
         
         return book;
@@ -64,13 +66,14 @@ public class BookRepository : BaseRepository, IRepository<Book>
     {
         using var connection = GetConnection();
         using var command = new SqlCommand(
-            "INSERT INTO Book(title,categoryId,authorId,isAvailable,price) VALUES(@title,@categoryId,@authorId,@isAvailable,@price)", connection);
+            "INSERT INTO Book(title,categoryId,authorId,isAvailable,price,state) VALUES(@title,@categoryId,@authorId,@isAvailable,@price,@state)", connection);
         
         command.Parameters.AddWithValue("@title", entity.BookTitle);
         command.Parameters.AddWithValue("@categoryId", entity.CategoryId);
         command.Parameters.AddWithValue("@authorId", entity.AuthorId);
         command.Parameters.AddWithValue("@isAvailable", entity.isAvailable);
         command.Parameters.AddWithValue("@price", entity.Price);
+        command.Parameters.AddWithValue("@state", entity.State!.Value.ToString());
         connection.Open();
         
         command.ExecuteNonQuery();
@@ -109,6 +112,12 @@ public class BookRepository : BaseRepository, IRepository<Book>
         {
             updates.Add("isAvailable = @isAvailable");
             command.Parameters.AddWithValue("@isAvailable", book.isAvailable.Value);
+        }
+        
+        if (book.State.HasValue)
+        {
+            updates.Add("state = @state");
+            command.Parameters.AddWithValue("@state", book.State.Value.ToString());
         }
 
         if (updates.Count == 0)

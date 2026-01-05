@@ -31,15 +31,15 @@ partial class MainForm
     {
         splitContainer1 = new System.Windows.Forms.SplitContainer();
         gbReports = new System.Windows.Forms.GroupBox();
+        btnReports = new System.Windows.Forms.Button();
         gbApp = new System.Windows.Forms.GroupBox();
+        btnExit = new System.Windows.Forms.Button();
         gbManagment = new System.Windows.Forms.GroupBox();
         btnLoans = new System.Windows.Forms.Button();
         btnMembers = new System.Windows.Forms.Button();
         btnCategories = new System.Windows.Forms.Button();
         btnAuthors = new System.Windows.Forms.Button();
         btnBooks = new System.Windows.Forms.Button();
-        btnReports = new System.Windows.Forms.Button();
-        btnExit = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
         splitContainer1.Panel1.SuspendLayout();
         splitContainer1.SuspendLayout();
@@ -75,6 +75,15 @@ partial class MainForm
         gbReports.TabStop = false;
         gbReports.Text = "groupBox1";
         // 
+        // btnReports
+        // 
+        btnReports.Location = new System.Drawing.Point(49, 61);
+        btnReports.Name = "btnReports";
+        btnReports.Size = new System.Drawing.Size(75, 23);
+        btnReports.TabIndex = 1;
+        btnReports.Text = "button1";
+        btnReports.UseVisualStyleBackColor = true;
+        // 
         // gbApp
         // 
         gbApp.Controls.Add(btnExit);
@@ -85,6 +94,15 @@ partial class MainForm
         gbApp.TabIndex = 0;
         gbApp.TabStop = false;
         gbApp.Text = "groupBox2";
+        // 
+        // btnExit
+        // 
+        btnExit.Location = new System.Drawing.Point(46, 55);
+        btnExit.Name = "btnExit";
+        btnExit.Size = new System.Drawing.Size(75, 23);
+        btnExit.TabIndex = 0;
+        btnExit.Text = "button1";
+        btnExit.UseVisualStyleBackColor = true;
         // 
         // gbManagment
         // 
@@ -143,26 +161,9 @@ partial class MainForm
         btnBooks.Name = "btnBooks";
         btnBooks.Size = new System.Drawing.Size(75, 23);
         btnBooks.TabIndex = 0;
-        btnBooks.Text = "button1";
+        btnBooks.Text = "Books";
         btnBooks.UseVisualStyleBackColor = true;
-        // 
-        // btnReports
-        // 
-        btnReports.Location = new System.Drawing.Point(49, 61);
-        btnReports.Name = "btnReports";
-        btnReports.Size = new System.Drawing.Size(75, 23);
-        btnReports.TabIndex = 1;
-        btnReports.Text = "button1";
-        btnReports.UseVisualStyleBackColor = true;
-        // 
-        // btnExit
-        // 
-        btnExit.Location = new System.Drawing.Point(46, 55);
-        btnExit.Name = "btnExit";
-        btnExit.Size = new System.Drawing.Size(75, 23);
-        btnExit.TabIndex = 0;
-        btnExit.Text = "button1";
-        btnExit.UseVisualStyleBackColor = true;
+        btnBooks.Click += btnBooks_Click;
         // 
         // MainForm
         // 

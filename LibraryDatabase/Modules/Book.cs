@@ -1,4 +1,6 @@
-﻿namespace LibraryDatabase.Modules;
+﻿using LibraryDatabase.Data;
+
+namespace LibraryDatabase.Modules;
 
 public class Book
 {
@@ -9,6 +11,7 @@ public class Book
     public int? CategoryId { get; set; }
     public int? AuthorId { get; set; }
     public bool? isAvailable { get; set; }
+    public State? State { get; set; }
 
     public float? Price
     {
