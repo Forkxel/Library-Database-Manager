@@ -25,6 +25,18 @@
       <Compile Update="Forms\Book\BookUpdate.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Forms\Author\AuthorAdd.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Author\AuthorDelete.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Author\AuthorForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Author\AuthorUpdate.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

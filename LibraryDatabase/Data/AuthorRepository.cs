@@ -3,11 +3,11 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
-public class AuthorRepository : BaseRepository, IRepository<Author>
+public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
 {
-    public List<Author> GetAll()
+    public List<Modules.Author> GetAll()
     {
-        var authors = new List<Author>();
+        var authors = new List<Modules.Author>();
         
         using var connection = GetConnection(); 
         using var command = new SqlCommand("SELECT * FROM Author", connection);
@@ -28,10 +28,10 @@ public class AuthorRepository : BaseRepository, IRepository<Author>
         return authors;
     }
 
-    public Author? GetById(int id)
+    public Modules.Author? GetById(int id)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Author WHERE AuthorID = @id", connection);
+        using var command = new SqlCommand("SELECT * FROM Author WHERE id = @id", connection);
         
         command.Parameters.AddWithValue("@id", id);
         
@@ -43,7 +43,7 @@ public class AuthorRepository : BaseRepository, IRepository<Author>
             return null;
         }
         
-        var author = new Author
+        var author = new Modules.Author
         {
             AuthorID = reader.GetInt32(0),
             FirstName = reader.GetString(1),
@@ -53,7 +53,7 @@ public class AuthorRepository : BaseRepository, IRepository<Author>
         return author;
     }
 
-    public void Add(Author entity)
+    public void Add(Modules.Author entity)
     {
         using var connection = GetConnection();
         using var command = new SqlCommand("INSERT INTO Author(firstName, lastName) VALUES(@firstName, @lastName)", connection);
@@ -65,7 +65,7 @@ public class AuthorRepository : BaseRepository, IRepository<Author>
         command.ExecuteNonQuery();
     }
 
-    public void Update(Author entity)
+    public void Update(Modules.Author entity)
     {
         var updates = new List<string>();
         var command = new SqlCommand();
@@ -87,7 +87,7 @@ public class AuthorRepository : BaseRepository, IRepository<Author>
             return;
         }
         
-        command.CommandText = $"UPDATE Loan SET {string.Join(", ", updates)} WHERE id = @id";
+        command.CommandText = $"UPDATE Author SET {string.Join(", ", updates)} WHERE id = @id";
         
         command.Parameters.AddWithValue("@id", entity.AuthorID);
         
@@ -100,7 +100,7 @@ public class AuthorRepository : BaseRepository, IRepository<Author>
     public void Delete(int id)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("DELETE FROM Author WHERE AuthorID = @id", connection);
+        using var command = new SqlCommand("DELETE FROM Author WHERE id = @id", connection);
         
         command.Parameters.AddWithValue("@id", id);
         

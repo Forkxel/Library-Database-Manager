@@ -152,8 +152,9 @@ partial class MainForm
         btnAuthors.Name = "btnAuthors";
         btnAuthors.Size = new System.Drawing.Size(75, 23);
         btnAuthors.TabIndex = 1;
-        btnAuthors.Text = "button2";
+        btnAuthors.Text = "Authors";
         btnAuthors.UseVisualStyleBackColor = true;
+        btnAuthors.Click += btnAuthors_Click;
         // 
         // btnBooks
         // 
