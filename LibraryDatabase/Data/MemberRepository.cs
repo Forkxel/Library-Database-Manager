@@ -3,11 +3,11 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
-public class MemberRepository : BaseRepository, IRepository<Member>
+public class MemberRepository : BaseRepository, IRepository<Modules.Member>
 {
-    public List<Member> GetAll()
+    public List<Modules.Member> GetAll()
     {
-        var members = new List<Member>();
+        var members = new List<Modules.Member>();
 
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT * FROM Members", connection);
@@ -17,7 +17,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
         
         while (reader.Read())
         {
-            members.Add(new Member
+            members.Add(new Modules.Member
             {
                 MemberID = reader.GetInt32(0),
                 FirstName = reader.GetString(1),
@@ -29,7 +29,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
         return members;
     }
 
-    public Member? GetById(int id)
+    public Modules.Member? GetById(int id)
     {
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT * FROM Members WHERE MemberID = @id", connection);
@@ -44,7 +44,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
             return null;
         }
 
-        var member = new Member
+        var member = new Modules.Member
         {
             MemberID = reader.GetInt32(0),
             FirstName = reader.GetString(1),
@@ -55,7 +55,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
         return member;
     }
 
-    public void Add(Member entity)
+    public void Add(Modules.Member entity)
     {
         using var connection = GetConnection();
         using var command = new SqlCommand("INSERT INTO Members(firstName, lastName, email) VALUES(@firstName, @lastName, @email)", connection);
@@ -68,7 +68,7 @@ public class MemberRepository : BaseRepository, IRepository<Member>
         command.ExecuteNonQuery();
     }
 
-    public void Update(Member member)
+    public void Update(Modules.Member member)
     {
         var updates = new List<string>();
         var command = new SqlCommand();

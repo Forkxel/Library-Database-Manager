@@ -1,3 +1,5 @@
+using LibraryDatabase.Forms;
+
 namespace LibraryDatabase;
 
 static class Program

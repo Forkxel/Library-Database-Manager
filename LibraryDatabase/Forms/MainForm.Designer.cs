@@ -1,4 +1,4 @@
-﻿namespace LibraryDatabase;
+﻿namespace LibraryDatabase.Forms;
 
 partial class MainForm
 {
@@ -134,8 +134,9 @@ partial class MainForm
         btnMembers.Name = "btnMembers";
         btnMembers.Size = new System.Drawing.Size(75, 23);
         btnMembers.TabIndex = 3;
-        btnMembers.Text = "button4";
+        btnMembers.Text = "Members";
         btnMembers.UseVisualStyleBackColor = true;
+        btnMembers.Click += btnMembers_Click;
         // 
         // btnCategories
         // 

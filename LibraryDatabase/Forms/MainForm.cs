@@ -1,8 +1,9 @@
 using LibraryDatabase.Category;
 using LibraryDatabase.Forms.Author;
 using LibraryDatabase.Forms.Book;
+using LibraryDatabase.Forms.Member;
 
-namespace LibraryDatabase;
+namespace LibraryDatabase.Forms;
 
 public partial class MainForm : Form
 {
@@ -27,5 +28,11 @@ public partial class MainForm : Form
     {
         CategoryForm categoryForm = new CategoryForm();
         categoryForm.ShowDialog();
+    }
+
+    private void btnMembers_Click(object sender, EventArgs e)
+    {
+        MemberForm memberForm = new MemberForm();
+        memberForm.ShowDialog();
     }
 }

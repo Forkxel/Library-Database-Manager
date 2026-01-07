@@ -49,6 +49,18 @@
       <Compile Update="Forms\Category\CategoryForm.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Forms\Member\MemberForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Member\MemberAdd.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Member\MemberUpdate.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Member\MemberDelete.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>
