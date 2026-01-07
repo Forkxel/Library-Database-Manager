@@ -23,7 +23,9 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
                MemberId = reader.GetInt32(1),
                BookId = reader.GetInt32(2),
                LoanDate = reader.GetDateTime(3),
-               ReturnDate = reader.GetDateTime(4)
+               ReturnDate = reader.IsDBNull(4) 
+                   ? null 
+                   : reader.GetDateTime(4)
            }); 
         }
         
@@ -135,6 +137,19 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
 
         try
         {
+            var checkLoanCmd = new SqlCommand("SELECT COUNT(*) FROM Loan WHERE bookId = @bookId AND returnDate IS NULL",
+                connection, transaction);
+
+            checkLoanCmd.Parameters.AddWithValue("@bookId", bookId);
+
+            int activeLoans = (int)checkLoanCmd.ExecuteScalar();
+
+            if (activeLoans > 0)
+            {
+                throw new Exception("Book is already borrowed");
+            }
+
+            
             var insertLoan = new SqlCommand("INSERT INTO Loan (memberId, bookId, loanDate) VALUES (@memberId, @bookId, GETDATE())",connection, transaction);
 
             insertLoan.Parameters.AddWithValue("@memberId", memberId);

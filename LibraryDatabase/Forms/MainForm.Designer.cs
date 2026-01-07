@@ -125,8 +125,9 @@ partial class MainForm
         btnLoans.Name = "btnLoans";
         btnLoans.Size = new System.Drawing.Size(75, 23);
         btnLoans.TabIndex = 4;
-        btnLoans.Text = "button5";
+        btnLoans.Text = "Loans";
         btnLoans.UseVisualStyleBackColor = true;
+        btnLoans.Click += btnLoans_Click;
         // 
         // btnMembers
         // 

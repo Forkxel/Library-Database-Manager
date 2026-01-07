@@ -1,6 +1,7 @@
 using LibraryDatabase.Category;
 using LibraryDatabase.Forms.Author;
 using LibraryDatabase.Forms.Book;
+using LibraryDatabase.Forms.Loan;
 using LibraryDatabase.Forms.Member;
 
 namespace LibraryDatabase.Forms;
@@ -34,5 +35,11 @@ public partial class MainForm : Form
     {
         MemberForm memberForm = new MemberForm();
         memberForm.ShowDialog();
+    }
+
+    private void btnLoans_Click(object sender, EventArgs e)
+    {
+        LoanForm  loanForm = new LoanForm();
+        loanForm.ShowDialog();
     }
 }
