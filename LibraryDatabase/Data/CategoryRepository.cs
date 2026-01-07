@@ -3,11 +3,11 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
-public class CategoryRepository : BaseRepository, IRepository<Category>
+public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
 {
-    public List<Category> GetAll()
+    public List<Modules.Category> GetAll()
     {
-        var categories = new List<Category>();
+        var categories = new List<Modules.Category>();
         
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT * FROM CATEGORY", connection);
@@ -17,7 +17,7 @@ public class CategoryRepository : BaseRepository, IRepository<Category>
 
         while (reader.Read())
         {
-            categories.Add(new Category
+            categories.Add(new Modules.Category
             {
                 CategoryId = reader.GetInt32(0),
                 CategoryName = reader.GetString(1)
@@ -27,7 +27,7 @@ public class CategoryRepository : BaseRepository, IRepository<Category>
         return categories;
     }
 
-    public Category? GetById(int id)
+    public Modules.Category? GetById(int id)
     {
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT * FROM CATEGORY WHERE id=@id", connection);
@@ -42,7 +42,7 @@ public class CategoryRepository : BaseRepository, IRepository<Category>
             return null;
         }
 
-        var category = new Category
+        var category = new Modules.Category
         {
             CategoryId = reader.GetInt32(0),
             CategoryName = reader.GetString(1)
@@ -51,7 +51,7 @@ public class CategoryRepository : BaseRepository, IRepository<Category>
         return category;
     }
 
-    public void Add(Category entity)
+    public void Add(Modules.Category entity)
     {
         using var connection = GetConnection();
         using var command = new SqlCommand("INSERT INTO Category(name) VALUES (@Name)", connection);
@@ -62,7 +62,7 @@ public class CategoryRepository : BaseRepository, IRepository<Category>
         command.ExecuteNonQuery();
     }
 
-    public void Update(Category entity)
+    public void Update(Modules.Category entity)
     {
         var updates = new List<string>();
         var command = new SqlCommand();

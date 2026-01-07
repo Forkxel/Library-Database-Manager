@@ -37,6 +37,18 @@
       <Compile Update="Forms\Author\AuthorUpdate.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Forms\Category\CategoryAdd.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Category\CategoryDelete.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Category\CategoryUpdate.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Category\CategoryForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

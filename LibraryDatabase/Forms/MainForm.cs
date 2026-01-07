@@ -1,3 +1,4 @@
+using LibraryDatabase.Category;
 using LibraryDatabase.Forms.Author;
 using LibraryDatabase.Forms.Book;
 
@@ -20,5 +21,11 @@ public partial class MainForm : Form
     {
         AuthorForm authorForm = new AuthorForm();
         authorForm.ShowDialog();
+    }
+
+    private void btnCategories_Click(object sender, EventArgs e)
+    {
+        CategoryForm categoryForm = new CategoryForm();
+        categoryForm.ShowDialog();
     }
 }

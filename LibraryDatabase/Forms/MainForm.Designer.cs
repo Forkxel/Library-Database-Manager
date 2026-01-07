@@ -143,8 +143,9 @@ partial class MainForm
         btnCategories.Name = "btnCategories";
         btnCategories.Size = new System.Drawing.Size(75, 23);
         btnCategories.TabIndex = 2;
-        btnCategories.Text = "button3";
+        btnCategories.Text = "Categories";
         btnCategories.UseVisualStyleBackColor = true;
+        btnCategories.Click += btnCategories_Click;
         // 
         // btnAuthors
         // 
