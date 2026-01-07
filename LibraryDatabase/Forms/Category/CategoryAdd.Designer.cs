@@ -34,6 +34,7 @@ partial class CategoryAdd
         textBoxName = new System.Windows.Forms.TextBox();
         button1 = new System.Windows.Forms.Button();
         button2 = new System.Windows.Forms.Button();
+        buttonImport = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // textBoxName
@@ -64,11 +65,22 @@ partial class CategoryAdd
         button2.UseVisualStyleBackColor = true;
         button2.Click += button2_Click;
         // 
+        // buttonImport
+        // 
+        buttonImport.Location = new System.Drawing.Point(680, 375);
+        buttonImport.Name = "buttonImport";
+        buttonImport.Size = new System.Drawing.Size(101, 56);
+        buttonImport.TabIndex = 3;
+        buttonImport.Text = "Import";
+        buttonImport.UseVisualStyleBackColor = true;
+        buttonImport.Click += buttonImport_Click;
+        // 
         // CategoryAdd
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(buttonImport);
         Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBoxName);
@@ -76,6 +88,8 @@ partial class CategoryAdd
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button buttonImport;
 
     private System.Windows.Forms.TextBox textBoxName;
     private System.Windows.Forms.Button button1;

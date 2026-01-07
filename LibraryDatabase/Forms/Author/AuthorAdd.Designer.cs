@@ -35,6 +35,7 @@ partial class AuthorAdd
         textBoxLast = new System.Windows.Forms.TextBox();
         button1 = new System.Windows.Forms.Button();
         button2 = new System.Windows.Forms.Button();
+        buttonImport = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // textBoxFirst
@@ -55,7 +56,7 @@ partial class AuthorAdd
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(309, 291);
+        button1.Location = new System.Drawing.Point(289, 291);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(86, 58);
         button1.TabIndex = 2;
@@ -65,7 +66,7 @@ partial class AuthorAdd
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(435, 291);
+        button2.Location = new System.Drawing.Point(445, 291);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(86, 58);
         button2.TabIndex = 3;
@@ -73,11 +74,22 @@ partial class AuthorAdd
         button2.UseVisualStyleBackColor = true;
         button2.Click += button2_Click;
         // 
+        // buttonImport
+        // 
+        buttonImport.Location = new System.Drawing.Point(692, 376);
+        buttonImport.Name = "buttonImport";
+        buttonImport.Size = new System.Drawing.Size(86, 58);
+        buttonImport.TabIndex = 4;
+        buttonImport.Text = "Import";
+        buttonImport.UseVisualStyleBackColor = true;
+        buttonImport.Click += buttonImport_Click;
+        // 
         // AuthorAdd
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(buttonImport);
         Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBoxLast);
@@ -86,6 +98,8 @@ partial class AuthorAdd
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button buttonImport;
 
     private System.Windows.Forms.TextBox textBoxFirst;
     private System.Windows.Forms.TextBox textBoxLast;

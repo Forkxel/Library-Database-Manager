@@ -107,4 +107,42 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         connection.Open();
         command.ExecuteNonQuery();
     }
+    
+    public void ImportAuthorsFromCsv(string filePath)
+    {
+        using var connection = GetConnection();
+        connection.Open();
+
+        using var transaction = connection.BeginTransaction();
+
+        try
+        {
+            var lines = File.ReadAllLines(filePath);
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                var parts = lines[i].Split(',');
+
+                if (parts.Length != 2)
+                {
+                    continue;
+                }
+                
+                var cmd = new SqlCommand("INSERT INTO Author (firstName, lastName) VALUES (@firstName, @lastName)", connection, transaction);
+
+                cmd.Parameters.AddWithValue("@firstName", parts[0].Trim());
+                cmd.Parameters.AddWithValue("@lastName", parts[1].Trim());
+
+                cmd.ExecuteNonQuery();
+            }
+
+            transaction.Commit();
+        }
+        catch
+        {
+            transaction.Rollback();
+            throw;
+        }
+    }
+
 }

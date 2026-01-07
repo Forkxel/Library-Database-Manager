@@ -98,4 +98,40 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         connection.Open();
         command.ExecuteNonQuery();
     }
+    
+    public void ImportCategoriesFromCsv(string filePath)
+    {
+        using var connection = GetConnection();
+        connection.Open();
+
+        using var transaction = connection.BeginTransaction();
+
+        try
+        {
+            var lines = File.ReadAllLines(filePath);
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                var name = lines[i].Trim();
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    continue;
+                }
+                
+                var cmd = new SqlCommand("INSERT INTO Category (name) VALUES (@name)", connection, transaction);
+
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.ExecuteNonQuery();
+            }
+
+            transaction.Commit();
+        }
+        catch
+        {
+            transaction.Rollback();
+            throw;
+        }
+    }
+
 }
