@@ -38,15 +38,16 @@ partial class MemberDelete
         // 
         // textBoxID
         // 
-        textBoxID.Location = new System.Drawing.Point(332, 207);
+        textBoxID.Location = new System.Drawing.Point(141, 67);
         textBoxID.Name = "textBoxID";
         textBoxID.PlaceholderText = "ID to delete";
         textBoxID.Size = new System.Drawing.Size(100, 23);
         textBoxID.TabIndex = 0;
+        textBoxID.TabStop = false;
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(268, 278);
+        button1.Location = new System.Drawing.Point(77, 130);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(92, 53);
         button1.TabIndex = 1;
@@ -56,7 +57,7 @@ partial class MemberDelete
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(406, 278);
+        button2.Location = new System.Drawing.Point(209, 130);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(92, 53);
         button2.TabIndex = 2;
@@ -68,10 +69,11 @@ partial class MemberDelete
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(377, 267);
         Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBoxID);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "MemberDelete";
         ResumeLayout(false);
         PerformLayout();

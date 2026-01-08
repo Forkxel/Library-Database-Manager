@@ -38,6 +38,10 @@ partial class LoanBorrow
         textBoxBook = new System.Windows.Forms.TextBox();
         splitContainer1 = new System.Windows.Forms.SplitContainer();
         dataGridView1 = new System.Windows.Forms.DataGridView();
+        ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        ColumnFirst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        ColumnLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
         dataGridView2 = new System.Windows.Forms.DataGridView();
         ColumnIDBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,10 +50,6 @@ partial class LoanBorrow
         ColumnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnIsAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        ColumnFirst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        ColumnLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
         panel1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
         splitContainer1.Panel1.SuspendLayout();
@@ -136,6 +136,30 @@ partial class LoanBorrow
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
         // 
+        // ColumnID
+        // 
+        ColumnID.DataPropertyName = "MemberId";
+        ColumnID.HeaderText = "ID";
+        ColumnID.Name = "ColumnID";
+        // 
+        // ColumnFirst
+        // 
+        ColumnFirst.DataPropertyName = "FirstName";
+        ColumnFirst.HeaderText = "First name";
+        ColumnFirst.Name = "ColumnFirst";
+        // 
+        // ColumnLast
+        // 
+        ColumnLast.DataPropertyName = "LastName";
+        ColumnLast.HeaderText = "Last name";
+        ColumnLast.Name = "ColumnLast";
+        // 
+        // ColumnEmail
+        // 
+        ColumnEmail.DataPropertyName = "Email";
+        ColumnEmail.HeaderText = "Email";
+        ColumnEmail.Name = "ColumnEmail";
+        // 
         // dataGridView2
         // 
         dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -189,30 +213,6 @@ partial class LoanBorrow
         ColumnState.HeaderText = "State";
         ColumnState.Name = "ColumnState";
         // 
-        // ColumnID
-        // 
-        ColumnID.DataPropertyName = "MemberId";
-        ColumnID.HeaderText = "ID";
-        ColumnID.Name = "ColumnID";
-        // 
-        // ColumnFirst
-        // 
-        ColumnFirst.DataPropertyName = "FirstName";
-        ColumnFirst.HeaderText = "First name";
-        ColumnFirst.Name = "ColumnFirst";
-        // 
-        // ColumnLast
-        // 
-        ColumnLast.DataPropertyName = "LastName";
-        ColumnLast.HeaderText = "Last name";
-        ColumnLast.Name = "ColumnLast";
-        // 
-        // ColumnEmail
-        // 
-        ColumnEmail.DataPropertyName = "Email";
-        ColumnEmail.HeaderText = "Email";
-        ColumnEmail.Name = "ColumnEmail";
-        // 
         // LoanBorrow
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -220,6 +220,8 @@ partial class LoanBorrow
         ClientSize = new System.Drawing.Size(1328, 610);
         Controls.Add(splitContainer1);
         Controls.Add(panel1);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         Text = "LoanBorrow";
         Load += LoanBorrow_Load;
         panel1.ResumeLayout(false);

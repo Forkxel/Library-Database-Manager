@@ -39,7 +39,7 @@ partial class CategoryUpdate
         // 
         // textBoxID
         // 
-        textBoxID.Location = new System.Drawing.Point(335, 143);
+        textBoxID.Location = new System.Drawing.Point(96, 54);
         textBoxID.Name = "textBoxID";
         textBoxID.PlaceholderText = "ID to update";
         textBoxID.Size = new System.Drawing.Size(100, 23);
@@ -47,7 +47,7 @@ partial class CategoryUpdate
         // 
         // textBoxCategory
         // 
-        textBoxCategory.Location = new System.Drawing.Point(335, 202);
+        textBoxCategory.Location = new System.Drawing.Point(96, 102);
         textBoxCategory.Name = "textBoxCategory";
         textBoxCategory.PlaceholderText = "Category name";
         textBoxCategory.Size = new System.Drawing.Size(100, 23);
@@ -55,7 +55,7 @@ partial class CategoryUpdate
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(276, 268);
+        button1.Location = new System.Drawing.Point(47, 152);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(84, 50);
         button1.TabIndex = 2;
@@ -65,7 +65,7 @@ partial class CategoryUpdate
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(399, 268);
+        button2.Location = new System.Drawing.Point(161, 152);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(84, 50);
         button2.TabIndex = 3;
@@ -77,11 +77,12 @@ partial class CategoryUpdate
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(295, 247);
         Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBoxCategory);
         Controls.Add(textBoxID);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "CategoryUpdate";
         ResumeLayout(false);
         PerformLayout();

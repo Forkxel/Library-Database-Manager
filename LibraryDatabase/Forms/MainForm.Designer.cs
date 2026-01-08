@@ -29,196 +29,145 @@ partial class MainForm
     /// </summary>
     private void InitializeComponent()
     {
-        splitContainer1 = new System.Windows.Forms.SplitContainer();
-        gbReports = new System.Windows.Forms.GroupBox();
-        button1 = new System.Windows.Forms.Button();
-        btnReports = new System.Windows.Forms.Button();
-        gbApp = new System.Windows.Forms.GroupBox();
-        btnExit = new System.Windows.Forms.Button();
-        gbManagment = new System.Windows.Forms.GroupBox();
-        btnLoans = new System.Windows.Forms.Button();
-        btnMembers = new System.Windows.Forms.Button();
-        btnCategories = new System.Windows.Forms.Button();
-        btnAuthors = new System.Windows.Forms.Button();
-        btnBooks = new System.Windows.Forms.Button();
-        ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-        splitContainer1.Panel1.SuspendLayout();
-        splitContainer1.SuspendLayout();
-        gbReports.SuspendLayout();
-        gbApp.SuspendLayout();
-        gbManagment.SuspendLayout();
+        groupBox1 = new System.Windows.Forms.GroupBox();
+        button2 = new System.Windows.Forms.Button();
+        button3 = new System.Windows.Forms.Button();
+        button4 = new System.Windows.Forms.Button();
+        button5 = new System.Windows.Forms.Button();
+        button6 = new System.Windows.Forms.Button();
+        Reports = new System.Windows.Forms.GroupBox();
+        button7 = new System.Windows.Forms.Button();
+        button8 = new System.Windows.Forms.Button();
+        groupBox1.SuspendLayout();
+        Reports.SuspendLayout();
         SuspendLayout();
         // 
-        // splitContainer1
+        // groupBox1
         // 
-        splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-        splitContainer1.Location = new System.Drawing.Point(0, 0);
-        splitContainer1.Name = "splitContainer1";
+        groupBox1.Controls.Add(button2);
+        groupBox1.Controls.Add(button3);
+        groupBox1.Controls.Add(button4);
+        groupBox1.Controls.Add(button5);
+        groupBox1.Controls.Add(button6);
+        groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+        groupBox1.Location = new System.Drawing.Point(0, 0);
+        groupBox1.Name = "groupBox1";
+        groupBox1.Size = new System.Drawing.Size(462, 246);
+        groupBox1.TabIndex = 1;
+        groupBox1.TabStop = false;
+        groupBox1.Text = "Tables";
         // 
-        // splitContainer1.Panel1
+        // button2
         // 
-        splitContainer1.Panel1.Controls.Add(gbReports);
-        splitContainer1.Panel1.Controls.Add(gbManagment);
-        splitContainer1.Size = new System.Drawing.Size(800, 450);
-        splitContainer1.SplitterDistance = 220;
-        splitContainer1.TabIndex = 0;
-        splitContainer1.Text = "splitContainer1";
+        button2.Location = new System.Drawing.Point(166, 190);
+        button2.Name = "button2";
+        button2.Size = new System.Drawing.Size(112, 31);
+        button2.TabIndex = 4;
+        button2.Text = "Loans";
+        button2.UseVisualStyleBackColor = true;
+        button2.Click += button2_Click;
         // 
-        // gbReports
+        // button3
         // 
-        gbReports.Controls.Add(button1);
-        gbReports.Controls.Add(btnReports);
-        gbReports.Controls.Add(gbApp);
-        gbReports.Dock = System.Windows.Forms.DockStyle.Fill;
-        gbReports.Location = new System.Drawing.Point(0, 182);
-        gbReports.Name = "gbReports";
-        gbReports.Size = new System.Drawing.Size(220, 268);
-        gbReports.TabIndex = 1;
-        gbReports.TabStop = false;
-        gbReports.Text = "groupBox1";
+        button3.Location = new System.Drawing.Point(166, 153);
+        button3.Name = "button3";
+        button3.Size = new System.Drawing.Size(112, 31);
+        button3.TabIndex = 3;
+        button3.Text = "Members";
+        button3.UseVisualStyleBackColor = true;
+        button3.Click += button3_Click;
         // 
-        // button1
+        // button4
         // 
-        button1.Location = new System.Drawing.Point(49, 88);
-        button1.Name = "button1";
-        button1.Size = new System.Drawing.Size(91, 23);
-        button1.TabIndex = 2;
-        button1.Text = "Book Report";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        button4.Location = new System.Drawing.Point(166, 116);
+        button4.Name = "button4";
+        button4.Size = new System.Drawing.Size(112, 31);
+        button4.TabIndex = 2;
+        button4.Text = "Categories";
+        button4.UseVisualStyleBackColor = true;
+        button4.Click += button4_Click;
         // 
-        // btnReports
+        // button5
         // 
-        btnReports.Location = new System.Drawing.Point(49, 39);
-        btnReports.Name = "btnReports";
-        btnReports.Size = new System.Drawing.Size(91, 23);
-        btnReports.TabIndex = 1;
-        btnReports.Text = "Author Report";
-        btnReports.UseVisualStyleBackColor = true;
-        btnReports.Click += btnReports_Click;
+        button5.Location = new System.Drawing.Point(166, 79);
+        button5.Name = "button5";
+        button5.Size = new System.Drawing.Size(112, 31);
+        button5.TabIndex = 1;
+        button5.Text = "Authors";
+        button5.UseVisualStyleBackColor = true;
+        button5.Click += button5_Click;
         // 
-        // gbApp
+        // button6
         // 
-        gbApp.Controls.Add(btnExit);
-        gbApp.Dock = System.Windows.Forms.DockStyle.Bottom;
-        gbApp.Location = new System.Drawing.Point(3, 132);
-        gbApp.Name = "gbApp";
-        gbApp.Size = new System.Drawing.Size(214, 133);
-        gbApp.TabIndex = 0;
-        gbApp.TabStop = false;
-        gbApp.Text = "groupBox2";
+        button6.Location = new System.Drawing.Point(166, 42);
+        button6.Name = "button6";
+        button6.Size = new System.Drawing.Size(112, 31);
+        button6.TabIndex = 0;
+        button6.Text = "Books";
+        button6.UseVisualStyleBackColor = true;
+        button6.Click += button6_Click;
         // 
-        // btnExit
+        // Reports
         // 
-        btnExit.Location = new System.Drawing.Point(46, 55);
-        btnExit.Name = "btnExit";
-        btnExit.Size = new System.Drawing.Size(91, 23);
-        btnExit.TabIndex = 0;
-        btnExit.Text = "Exit";
-        btnExit.UseVisualStyleBackColor = true;
-        btnExit.Click += btnExit_Click;
+        Reports.Controls.Add(button7);
+        Reports.Controls.Add(button8);
+        Reports.Dock = System.Windows.Forms.DockStyle.Fill;
+        Reports.Location = new System.Drawing.Point(0, 246);
+        Reports.Name = "Reports";
+        Reports.Size = new System.Drawing.Size(462, 234);
+        Reports.TabIndex = 2;
+        Reports.TabStop = false;
+        Reports.Text = "Reports";
         // 
-        // gbManagment
+        // button7
         // 
-        gbManagment.Controls.Add(btnLoans);
-        gbManagment.Controls.Add(btnMembers);
-        gbManagment.Controls.Add(btnCategories);
-        gbManagment.Controls.Add(btnAuthors);
-        gbManagment.Controls.Add(btnBooks);
-        gbManagment.Dock = System.Windows.Forms.DockStyle.Top;
-        gbManagment.Location = new System.Drawing.Point(0, 0);
-        gbManagment.Name = "gbManagment";
-        gbManagment.Size = new System.Drawing.Size(220, 182);
-        gbManagment.TabIndex = 0;
-        gbManagment.TabStop = false;
-        gbManagment.Text = "groupBox1";
+        button7.Location = new System.Drawing.Point(166, 132);
+        button7.Name = "button7";
+        button7.Size = new System.Drawing.Size(112, 58);
+        button7.TabIndex = 2;
+        button7.Text = "Book Report";
+        button7.UseVisualStyleBackColor = true;
+        button7.Click += button7_Click;
         // 
-        // btnLoans
+        // button8
         // 
-        btnLoans.Location = new System.Drawing.Point(49, 139);
-        btnLoans.Name = "btnLoans";
-        btnLoans.Size = new System.Drawing.Size(91, 23);
-        btnLoans.TabIndex = 4;
-        btnLoans.Text = "Loans";
-        btnLoans.UseVisualStyleBackColor = true;
-        btnLoans.Click += btnLoans_Click;
-        // 
-        // btnMembers
-        // 
-        btnMembers.Location = new System.Drawing.Point(49, 110);
-        btnMembers.Name = "btnMembers";
-        btnMembers.Size = new System.Drawing.Size(91, 23);
-        btnMembers.TabIndex = 3;
-        btnMembers.Text = "Members";
-        btnMembers.UseVisualStyleBackColor = true;
-        btnMembers.Click += btnMembers_Click;
-        // 
-        // btnCategories
-        // 
-        btnCategories.Location = new System.Drawing.Point(49, 81);
-        btnCategories.Name = "btnCategories";
-        btnCategories.Size = new System.Drawing.Size(91, 23);
-        btnCategories.TabIndex = 2;
-        btnCategories.Text = "Categories";
-        btnCategories.UseVisualStyleBackColor = true;
-        btnCategories.Click += btnCategories_Click;
-        // 
-        // btnAuthors
-        // 
-        btnAuthors.Location = new System.Drawing.Point(49, 52);
-        btnAuthors.Name = "btnAuthors";
-        btnAuthors.Size = new System.Drawing.Size(91, 23);
-        btnAuthors.TabIndex = 1;
-        btnAuthors.Text = "Authors";
-        btnAuthors.UseVisualStyleBackColor = true;
-        btnAuthors.Click += btnAuthors_Click;
-        // 
-        // btnBooks
-        // 
-        btnBooks.Location = new System.Drawing.Point(49, 23);
-        btnBooks.Name = "btnBooks";
-        btnBooks.Size = new System.Drawing.Size(91, 23);
-        btnBooks.TabIndex = 0;
-        btnBooks.Text = "Books";
-        btnBooks.UseVisualStyleBackColor = true;
-        btnBooks.Click += btnBooks_Click;
+        button8.Location = new System.Drawing.Point(166, 49);
+        button8.Name = "button8";
+        button8.Size = new System.Drawing.Size(112, 58);
+        button8.TabIndex = 1;
+        button8.Text = "Author Report";
+        button8.UseVisualStyleBackColor = true;
+        button8.Click += button8_Click;
         // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
-        Controls.Add(splitContainer1);
-        Text = "MainForm";
-        splitContainer1.Panel1.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-        splitContainer1.ResumeLayout(false);
-        gbReports.ResumeLayout(false);
-        gbApp.ResumeLayout(false);
-        gbManagment.ResumeLayout(false);
+        ClientSize = new System.Drawing.Size(462, 480);
+        Controls.Add(Reports);
+        Controls.Add(groupBox1);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+        Text = "Library";
+        groupBox1.ResumeLayout(false);
+        Reports.ResumeLayout(false);
         ResumeLayout(false);
     }
 
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.GroupBox Reports;
+    private System.Windows.Forms.Button button7;
+    private System.Windows.Forms.Button button8;
+
+    private System.Windows.Forms.GroupBox groupBox1;
+    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Button button3;
+    private System.Windows.Forms.Button button4;
+    private System.Windows.Forms.Button button5;
+    private System.Windows.Forms.Button button6;
 
     private System.Windows.Forms.Button btnExit;
 
-    private System.Windows.Forms.Button btnReports;
-
     private System.Windows.Forms.GroupBox gbApp;
-
-    private System.Windows.Forms.GroupBox gbReports;
-
-    private System.Windows.Forms.Button btnCategories;
-    private System.Windows.Forms.Button btnMembers;
-    private System.Windows.Forms.Button btnLoans;
-
-    private System.Windows.Forms.Button btnBooks;
-    private System.Windows.Forms.Button btnAuthors;
-
-    private System.Windows.Forms.GroupBox gbManagment;
-
-    private System.Windows.Forms.SplitContainer splitContainer1;
 
     #endregion
 }

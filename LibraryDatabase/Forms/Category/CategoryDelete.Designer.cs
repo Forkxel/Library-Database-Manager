@@ -38,15 +38,16 @@ partial class CategoryDelete
         // 
         // textBoxID
         // 
-        textBoxID.Location = new System.Drawing.Point(353, 179);
+        textBoxID.Location = new System.Drawing.Point(105, 52);
         textBoxID.Name = "textBoxID";
         textBoxID.PlaceholderText = "ID to delete";
         textBoxID.Size = new System.Drawing.Size(100, 23);
         textBoxID.TabIndex = 0;
+        textBoxID.TabStop = false;
         // 
         // buttonOK
         // 
-        buttonOK.Location = new System.Drawing.Point(297, 274);
+        buttonOK.Location = new System.Drawing.Point(48, 108);
         buttonOK.Name = "buttonOK";
         buttonOK.Size = new System.Drawing.Size(84, 46);
         buttonOK.TabIndex = 1;
@@ -56,7 +57,7 @@ partial class CategoryDelete
         // 
         // buttonCancel
         // 
-        buttonCancel.Location = new System.Drawing.Point(419, 274);
+        buttonCancel.Location = new System.Drawing.Point(170, 108);
         buttonCancel.Name = "buttonCancel";
         buttonCancel.Size = new System.Drawing.Size(84, 46);
         buttonCancel.TabIndex = 2;
@@ -68,10 +69,11 @@ partial class CategoryDelete
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(294, 199);
         Controls.Add(buttonCancel);
         Controls.Add(buttonOK);
         Controls.Add(textBoxID);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "CategoryDelete";
         ResumeLayout(false);
         PerformLayout();

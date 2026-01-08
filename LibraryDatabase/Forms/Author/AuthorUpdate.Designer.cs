@@ -40,7 +40,7 @@ partial class AuthorUpdate
         // 
         // textBoxId
         // 
-        textBoxId.Location = new System.Drawing.Point(350, 112);
+        textBoxId.Location = new System.Drawing.Point(114, 41);
         textBoxId.Name = "textBoxId";
         textBoxId.PlaceholderText = "ID to update";
         textBoxId.Size = new System.Drawing.Size(100, 23);
@@ -48,7 +48,7 @@ partial class AuthorUpdate
         // 
         // textBoxFirst
         // 
-        textBoxFirst.Location = new System.Drawing.Point(350, 166);
+        textBoxFirst.Location = new System.Drawing.Point(114, 90);
         textBoxFirst.Name = "textBoxFirst";
         textBoxFirst.PlaceholderText = "First name";
         textBoxFirst.Size = new System.Drawing.Size(100, 23);
@@ -56,7 +56,7 @@ partial class AuthorUpdate
         // 
         // textBoxLast
         // 
-        textBoxLast.Location = new System.Drawing.Point(350, 221);
+        textBoxLast.Location = new System.Drawing.Point(114, 138);
         textBoxLast.Name = "textBoxLast";
         textBoxLast.PlaceholderText = "Last name";
         textBoxLast.Size = new System.Drawing.Size(100, 23);
@@ -64,7 +64,7 @@ partial class AuthorUpdate
         // 
         // buttonOK
         // 
-        buttonOK.Location = new System.Drawing.Point(301, 300);
+        buttonOK.Location = new System.Drawing.Point(66, 188);
         buttonOK.Name = "buttonOK";
         buttonOK.Size = new System.Drawing.Size(78, 44);
         buttonOK.TabIndex = 3;
@@ -74,7 +74,7 @@ partial class AuthorUpdate
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(422, 300);
+        button2.Location = new System.Drawing.Point(173, 188);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(78, 44);
         button2.TabIndex = 4;
@@ -86,12 +86,13 @@ partial class AuthorUpdate
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(308, 275);
         Controls.Add(button2);
         Controls.Add(buttonOK);
         Controls.Add(textBoxLast);
         Controls.Add(textBoxFirst);
         Controls.Add(textBoxId);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "AuthorUpdate";
         ResumeLayout(false);
         PerformLayout();

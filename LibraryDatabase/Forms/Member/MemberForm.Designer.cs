@@ -32,13 +32,13 @@ partial class MemberForm
     private void InitializeComponent()
     {
         dataGridView1 = new System.Windows.Forms.DataGridView();
-        buttonAdd = new System.Windows.Forms.Button();
-        buttonUpdate = new System.Windows.Forms.Button();
-        buttonDelete = new System.Windows.Forms.Button();
         ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        buttonAdd = new System.Windows.Forms.Button();
+        buttonUpdate = new System.Windows.Forms.Button();
+        buttonDelete = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
@@ -49,9 +49,33 @@ partial class MemberForm
         dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
         dataGridView1.Location = new System.Drawing.Point(0, 0);
         dataGridView1.Name = "dataGridView1";
-        dataGridView1.Size = new System.Drawing.Size(800, 340);
+        dataGridView1.Size = new System.Drawing.Size(560, 340);
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
+        // 
+        // ColumnID
+        // 
+        ColumnID.DataPropertyName = "MemberID";
+        ColumnID.HeaderText = "ID";
+        ColumnID.Name = "ColumnID";
+        // 
+        // ColumnFirstName
+        // 
+        ColumnFirstName.DataPropertyName = "FirstName";
+        ColumnFirstName.HeaderText = "First name";
+        ColumnFirstName.Name = "ColumnFirstName";
+        // 
+        // ColumnLastName
+        // 
+        ColumnLastName.DataPropertyName = "LastName";
+        ColumnLastName.HeaderText = "Last name";
+        ColumnLastName.Name = "ColumnLastName";
+        // 
+        // ColumnEmail
+        // 
+        ColumnEmail.DataPropertyName = "Email";
+        ColumnEmail.HeaderText = "Email";
+        ColumnEmail.Name = "ColumnEmail";
         // 
         // buttonAdd
         // 
@@ -83,39 +107,17 @@ partial class MemberForm
         buttonDelete.UseVisualStyleBackColor = true;
         buttonDelete.Click += buttonDelete_Click;
         // 
-        // ColumnID
-        // 
-        ColumnID.DataPropertyName = "MemberID";
-        ColumnID.HeaderText = "ID";
-        ColumnID.Name = "ColumnID";
-        // 
-        // ColumnFirstName
-        // 
-        ColumnFirstName.DataPropertyName = "FirstName";
-        ColumnFirstName.HeaderText = "First name";
-        ColumnFirstName.Name = "ColumnFirstName";
-        // 
-        // ColumnLastName
-        // 
-        ColumnLastName.DataPropertyName = "LastName";
-        ColumnLastName.HeaderText = "Last name";
-        ColumnLastName.Name = "ColumnLastName";
-        // 
-        // ColumnEmail
-        // 
-        ColumnEmail.DataPropertyName = "Email";
-        ColumnEmail.HeaderText = "Email";
-        ColumnEmail.Name = "ColumnEmail";
-        // 
         // MemberForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(560, 444);
         Controls.Add(buttonDelete);
         Controls.Add(buttonUpdate);
         Controls.Add(buttonAdd);
         Controls.Add(dataGridView1);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         Text = "MemberForm";
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         ResumeLayout(false);

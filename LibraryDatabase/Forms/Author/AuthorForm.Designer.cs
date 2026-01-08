@@ -48,7 +48,7 @@ partial class AuthorForm
         dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
         dataGridView1.Location = new System.Drawing.Point(0, 0);
         dataGridView1.Name = "dataGridView1";
-        dataGridView1.Size = new System.Drawing.Size(800, 330);
+        dataGridView1.Size = new System.Drawing.Size(470, 330);
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
         // 
@@ -104,11 +104,13 @@ partial class AuthorForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(470, 433);
         Controls.Add(buttonDelete);
         Controls.Add(buttonUpdate);
         Controls.Add(buttonAdd);
         Controls.Add(dataGridView1);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         Text = "AuthorForm";
         Load += AuthorForm_Load;
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

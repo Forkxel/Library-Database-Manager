@@ -38,13 +38,13 @@ partial class BookAdd
         comboBoxState = new System.Windows.Forms.ComboBox();
         checkBoxAvailable = new System.Windows.Forms.CheckBox();
         button1 = new System.Windows.Forms.Button();
-        textBox1 = new System.Windows.Forms.TextBox();
         button2 = new System.Windows.Forms.Button();
+        label1 = new System.Windows.Forms.Label();
         SuspendLayout();
         // 
         // textBoxTitle
         // 
-        textBoxTitle.Location = new System.Drawing.Point(357, 76);
+        textBoxTitle.Location = new System.Drawing.Point(133, 29);
         textBoxTitle.Name = "textBoxTitle";
         textBoxTitle.PlaceholderText = "Title";
         textBoxTitle.Size = new System.Drawing.Size(100, 23);
@@ -52,7 +52,7 @@ partial class BookAdd
         // 
         // textBoxAuthorId
         // 
-        textBoxAuthorId.Location = new System.Drawing.Point(357, 121);
+        textBoxAuthorId.Location = new System.Drawing.Point(133, 72);
         textBoxAuthorId.Name = "textBoxAuthorId";
         textBoxAuthorId.PlaceholderText = "Author ID";
         textBoxAuthorId.Size = new System.Drawing.Size(100, 23);
@@ -60,7 +60,7 @@ partial class BookAdd
         // 
         // textBoxCategory
         // 
-        textBoxCategory.Location = new System.Drawing.Point(357, 169);
+        textBoxCategory.Location = new System.Drawing.Point(133, 118);
         textBoxCategory.Name = "textBoxCategory";
         textBoxCategory.PlaceholderText = "Category ID";
         textBoxCategory.Size = new System.Drawing.Size(100, 23);
@@ -68,7 +68,7 @@ partial class BookAdd
         // 
         // textBoxPrice
         // 
-        textBoxPrice.Location = new System.Drawing.Point(357, 263);
+        textBoxPrice.Location = new System.Drawing.Point(133, 203);
         textBoxPrice.Name = "textBoxPrice";
         textBoxPrice.PlaceholderText = "Price";
         textBoxPrice.Size = new System.Drawing.Size(100, 23);
@@ -77,14 +77,14 @@ partial class BookAdd
         // comboBoxState
         // 
         comboBoxState.FormattingEnabled = true;
-        comboBoxState.Location = new System.Drawing.Point(346, 335);
+        comboBoxState.Location = new System.Drawing.Point(124, 285);
         comboBoxState.Name = "comboBoxState";
         comboBoxState.Size = new System.Drawing.Size(121, 23);
         comboBoxState.TabIndex = 5;
         // 
         // checkBoxAvailable
         // 
-        checkBoxAvailable.Location = new System.Drawing.Point(363, 218);
+        checkBoxAvailable.Location = new System.Drawing.Point(133, 162);
         checkBoxAvailable.Name = "checkBoxAvailable";
         checkBoxAvailable.Size = new System.Drawing.Size(104, 24);
         checkBoxAvailable.TabIndex = 6;
@@ -93,7 +93,7 @@ partial class BookAdd
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(288, 375);
+        button1.Location = new System.Drawing.Point(63, 332);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(100, 41);
         button1.TabIndex = 7;
@@ -101,19 +101,9 @@ partial class BookAdd
         button1.UseVisualStyleBackColor = true;
         button1.Click += button1_Click;
         // 
-        // textBox1
-        // 
-        textBox1.Location = new System.Drawing.Point(357, 306);
-        textBox1.Name = "textBox1";
-        textBox1.ReadOnly = true;
-        textBox1.Size = new System.Drawing.Size(100, 23);
-        textBox1.TabIndex = 8;
-        textBox1.Text = "State";
-        textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-        // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(416, 375);
+        button2.Location = new System.Drawing.Point(205, 332);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(100, 41);
         button2.TabIndex = 9;
@@ -121,13 +111,23 @@ partial class BookAdd
         button2.UseVisualStyleBackColor = true;
         button2.Click += button2_Click;
         // 
+        // label1
+        // 
+        label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+        label1.Location = new System.Drawing.Point(133, 259);
+        label1.Name = "label1";
+        label1.Size = new System.Drawing.Size(100, 23);
+        label1.TabIndex = 10;
+        label1.Text = "State";
+        label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
         // BookAdd
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(348, 407);
+        Controls.Add(label1);
         Controls.Add(button2);
-        Controls.Add(textBox1);
         Controls.Add(button1);
         Controls.Add(checkBoxAvailable);
         Controls.Add(comboBoxState);
@@ -135,15 +135,17 @@ partial class BookAdd
         Controls.Add(textBoxCategory);
         Controls.Add(textBoxAuthorId);
         Controls.Add(textBoxTitle);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "Add book";
         ResumeLayout(false);
         PerformLayout();
     }
 
+    private System.Windows.Forms.Label label1;
+
     private System.Windows.Forms.Button button2;
 
     private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.TextBox textBox1;
 
     private System.Windows.Forms.CheckBox checkBoxAvailable;
 

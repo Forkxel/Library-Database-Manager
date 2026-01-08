@@ -47,7 +47,7 @@ partial class BookReportForm
         dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
         dataGridView1.Location = new System.Drawing.Point(0, 0);
         dataGridView1.Name = "dataGridView1";
-        dataGridView1.Size = new System.Drawing.Size(800, 450);
+        dataGridView1.Size = new System.Drawing.Size(620, 442);
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
         // 
@@ -85,8 +85,10 @@ partial class BookReportForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(620, 442);
         Controls.Add(dataGridView1);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         Text = "BookReportForm";
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         ResumeLayout(false);

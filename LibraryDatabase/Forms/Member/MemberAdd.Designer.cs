@@ -40,7 +40,7 @@ partial class MemberAdd
         // 
         // textBoxFirst
         // 
-        textBoxFirst.Location = new System.Drawing.Point(354, 114);
+        textBoxFirst.Location = new System.Drawing.Point(191, 60);
         textBoxFirst.Name = "textBoxFirst";
         textBoxFirst.PlaceholderText = "First name";
         textBoxFirst.Size = new System.Drawing.Size(100, 23);
@@ -48,7 +48,7 @@ partial class MemberAdd
         // 
         // textBoxLast
         // 
-        textBoxLast.Location = new System.Drawing.Point(354, 172);
+        textBoxLast.Location = new System.Drawing.Point(191, 103);
         textBoxLast.Name = "textBoxLast";
         textBoxLast.PlaceholderText = "Last name";
         textBoxLast.Size = new System.Drawing.Size(100, 23);
@@ -56,7 +56,7 @@ partial class MemberAdd
         // 
         // textBoxEmail
         // 
-        textBoxEmail.Location = new System.Drawing.Point(354, 226);
+        textBoxEmail.Location = new System.Drawing.Point(191, 148);
         textBoxEmail.Name = "textBoxEmail";
         textBoxEmail.PlaceholderText = "Email";
         textBoxEmail.Size = new System.Drawing.Size(100, 23);
@@ -64,7 +64,7 @@ partial class MemberAdd
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(289, 293);
+        button1.Location = new System.Drawing.Point(136, 196);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(88, 49);
         button1.TabIndex = 3;
@@ -74,7 +74,7 @@ partial class MemberAdd
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(424, 293);
+        button2.Location = new System.Drawing.Point(258, 196);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(88, 49);
         button2.TabIndex = 4;
@@ -86,12 +86,13 @@ partial class MemberAdd
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(478, 324);
         Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBoxEmail);
         Controls.Add(textBoxLast);
         Controls.Add(textBoxFirst);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "MemberAdd";
         ResumeLayout(false);
         PerformLayout();

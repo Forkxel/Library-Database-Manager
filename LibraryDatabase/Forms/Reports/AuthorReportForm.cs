@@ -13,11 +13,6 @@ public partial class AuthorReportForm : Form
         LoadData();
     }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-        LoadData();
-    }
-
     private void LoadData()
     {
         try

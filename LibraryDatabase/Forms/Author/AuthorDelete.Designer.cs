@@ -38,15 +38,16 @@ partial class AuthorDelete
         // 
         // textBoxID
         // 
-        textBoxID.Location = new System.Drawing.Point(357, 163);
+        textBoxID.Location = new System.Drawing.Point(115, 48);
         textBoxID.Name = "textBoxID";
         textBoxID.PlaceholderText = "ID to delete";
         textBoxID.Size = new System.Drawing.Size(100, 23);
         textBoxID.TabIndex = 0;
+        textBoxID.TabStop = false;
         // 
         // buttonOK
         // 
-        buttonOK.Location = new System.Drawing.Point(288, 259);
+        buttonOK.Location = new System.Drawing.Point(49, 107);
         buttonOK.Name = "buttonOK";
         buttonOK.Size = new System.Drawing.Size(98, 46);
         buttonOK.TabIndex = 1;
@@ -56,7 +57,7 @@ partial class AuthorDelete
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(427, 259);
+        button2.Location = new System.Drawing.Point(183, 107);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(98, 46);
         button2.TabIndex = 2;
@@ -68,10 +69,11 @@ partial class AuthorDelete
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(324, 201);
         Controls.Add(button2);
         Controls.Add(buttonOK);
         Controls.Add(textBoxID);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "AuthorDelete";
         ResumeLayout(false);
         PerformLayout();

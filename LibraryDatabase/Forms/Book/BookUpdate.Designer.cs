@@ -37,15 +37,15 @@ partial class BookUpdate
         textBoxPrice = new System.Windows.Forms.TextBox();
         checkBoxAvailable = new System.Windows.Forms.CheckBox();
         comboBoxState = new System.Windows.Forms.ComboBox();
-        textBox1 = new System.Windows.Forms.TextBox();
         button1 = new System.Windows.Forms.Button();
         button2 = new System.Windows.Forms.Button();
         textBoxID = new System.Windows.Forms.TextBox();
+        label1 = new System.Windows.Forms.Label();
         SuspendLayout();
         // 
         // textBoxTitle
         // 
-        textBoxTitle.Location = new System.Drawing.Point(340, 82);
+        textBoxTitle.Location = new System.Drawing.Point(106, 70);
         textBoxTitle.Name = "textBoxTitle";
         textBoxTitle.PlaceholderText = "Title";
         textBoxTitle.Size = new System.Drawing.Size(100, 23);
@@ -53,7 +53,7 @@ partial class BookUpdate
         // 
         // textBoxCategory
         // 
-        textBoxCategory.Location = new System.Drawing.Point(340, 123);
+        textBoxCategory.Location = new System.Drawing.Point(106, 112);
         textBoxCategory.Name = "textBoxCategory";
         textBoxCategory.PlaceholderText = "Category ID";
         textBoxCategory.Size = new System.Drawing.Size(100, 23);
@@ -61,7 +61,7 @@ partial class BookUpdate
         // 
         // textBoxAuthor
         // 
-        textBoxAuthor.Location = new System.Drawing.Point(340, 171);
+        textBoxAuthor.Location = new System.Drawing.Point(106, 155);
         textBoxAuthor.Name = "textBoxAuthor";
         textBoxAuthor.PlaceholderText = "Author ID";
         textBoxAuthor.Size = new System.Drawing.Size(100, 23);
@@ -69,7 +69,7 @@ partial class BookUpdate
         // 
         // textBoxPrice
         // 
-        textBoxPrice.Location = new System.Drawing.Point(340, 262);
+        textBoxPrice.Location = new System.Drawing.Point(106, 233);
         textBoxPrice.Name = "textBoxPrice";
         textBoxPrice.PlaceholderText = "Price";
         textBoxPrice.Size = new System.Drawing.Size(100, 23);
@@ -77,7 +77,7 @@ partial class BookUpdate
         // 
         // checkBoxAvailable
         // 
-        checkBoxAvailable.Location = new System.Drawing.Point(340, 215);
+        checkBoxAvailable.Location = new System.Drawing.Point(106, 194);
         checkBoxAvailable.Name = "checkBoxAvailable";
         checkBoxAvailable.Size = new System.Drawing.Size(104, 24);
         checkBoxAvailable.TabIndex = 4;
@@ -88,24 +88,14 @@ partial class BookUpdate
         // 
         comboBoxState.AutoCompleteCustomSource.AddRange(new string[] { "New", "Used", "Damaged" });
         comboBoxState.FormattingEnabled = true;
-        comboBoxState.Location = new System.Drawing.Point(327, 332);
+        comboBoxState.Location = new System.Drawing.Point(100, 298);
         comboBoxState.Name = "comboBoxState";
         comboBoxState.Size = new System.Drawing.Size(121, 23);
         comboBoxState.TabIndex = 5;
         // 
-        // textBox1
-        // 
-        textBox1.Location = new System.Drawing.Point(340, 303);
-        textBox1.Name = "textBox1";
-        textBox1.ReadOnly = true;
-        textBox1.Size = new System.Drawing.Size(100, 23);
-        textBox1.TabIndex = 6;
-        textBox1.Text = "State";
-        textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-        // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(269, 380);
+        button1.Location = new System.Drawing.Point(43, 336);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(100, 44);
         button1.TabIndex = 7;
@@ -115,7 +105,7 @@ partial class BookUpdate
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(413, 380);
+        button2.Location = new System.Drawing.Point(178, 336);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(100, 44);
         button2.TabIndex = 8;
@@ -125,39 +115,50 @@ partial class BookUpdate
         // 
         // textBoxID
         // 
-        textBoxID.Location = new System.Drawing.Point(340, 42);
+        textBoxID.Location = new System.Drawing.Point(106, 29);
         textBoxID.Name = "textBoxID";
         textBoxID.PlaceholderText = "ID to update";
         textBoxID.Size = new System.Drawing.Size(100, 23);
         textBoxID.TabIndex = 9;
         // 
+        // label1
+        // 
+        label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+        label1.Location = new System.Drawing.Point(106, 272);
+        label1.Name = "label1";
+        label1.Size = new System.Drawing.Size(100, 23);
+        label1.TabIndex = 10;
+        label1.Text = "State";
+        label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
         // BookUpdate
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(324, 410);
+        Controls.Add(label1);
         Controls.Add(textBoxID);
         Controls.Add(button2);
         Controls.Add(button1);
-        Controls.Add(textBox1);
         Controls.Add(comboBoxState);
         Controls.Add(checkBoxAvailable);
         Controls.Add(textBoxPrice);
         Controls.Add(textBoxAuthor);
         Controls.Add(textBoxCategory);
         Controls.Add(textBoxTitle);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "Update book";
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Label label1;
 
     private System.Windows.Forms.TextBox textBoxID;
 
     private System.Windows.Forms.Button button2;
 
     private System.Windows.Forms.Button button1;
-
-    private System.Windows.Forms.TextBox textBox1;
 
     private System.Windows.Forms.ComboBox comboBoxState;
 

@@ -40,7 +40,7 @@ partial class AuthorAdd
         // 
         // textBoxFirst
         // 
-        textBoxFirst.Location = new System.Drawing.Point(365, 135);
+        textBoxFirst.Location = new System.Drawing.Point(124, 50);
         textBoxFirst.Name = "textBoxFirst";
         textBoxFirst.PlaceholderText = "First name";
         textBoxFirst.Size = new System.Drawing.Size(100, 23);
@@ -48,7 +48,7 @@ partial class AuthorAdd
         // 
         // textBoxLast
         // 
-        textBoxLast.Location = new System.Drawing.Point(365, 199);
+        textBoxLast.Location = new System.Drawing.Point(124, 99);
         textBoxLast.Name = "textBoxLast";
         textBoxLast.PlaceholderText = "Last name";
         textBoxLast.Size = new System.Drawing.Size(100, 23);
@@ -56,7 +56,7 @@ partial class AuthorAdd
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(289, 291);
+        button1.Location = new System.Drawing.Point(69, 147);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(86, 58);
         button1.TabIndex = 2;
@@ -66,7 +66,7 @@ partial class AuthorAdd
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(445, 291);
+        button2.Location = new System.Drawing.Point(189, 147);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(86, 58);
         button2.TabIndex = 3;
@@ -76,7 +76,7 @@ partial class AuthorAdd
         // 
         // buttonImport
         // 
-        buttonImport.Location = new System.Drawing.Point(692, 376);
+        buttonImport.Location = new System.Drawing.Point(309, 212);
         buttonImport.Name = "buttonImport";
         buttonImport.Size = new System.Drawing.Size(86, 58);
         buttonImport.TabIndex = 4;
@@ -88,12 +88,13 @@ partial class AuthorAdd
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(408, 283);
         Controls.Add(buttonImport);
         Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBoxLast);
         Controls.Add(textBoxFirst);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "AuthorAdd";
         ResumeLayout(false);
         PerformLayout();

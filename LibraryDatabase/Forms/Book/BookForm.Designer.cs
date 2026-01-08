@@ -147,6 +147,8 @@ partial class BookForm
         Controls.Add(DeleteButton);
         Controls.Add(UpdateButton);
         Controls.Add(dataGridView1);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         Text = "BookForm";
         Load += BookForm_Load;
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

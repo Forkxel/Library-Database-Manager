@@ -38,7 +38,7 @@ partial class LoanReturn
         // 
         // textBoxID
         // 
-        textBoxID.Location = new System.Drawing.Point(338, 195);
+        textBoxID.Location = new System.Drawing.Point(180, 79);
         textBoxID.Name = "textBoxID";
         textBoxID.PlaceholderText = "ID to return";
         textBoxID.Size = new System.Drawing.Size(100, 23);
@@ -46,7 +46,7 @@ partial class LoanReturn
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(251, 280);
+        button1.Location = new System.Drawing.Point(103, 152);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(103, 59);
         button1.TabIndex = 1;
@@ -56,7 +56,7 @@ partial class LoanReturn
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(421, 280);
+        button2.Location = new System.Drawing.Point(247, 152);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(103, 59);
         button2.TabIndex = 2;
@@ -68,10 +68,11 @@ partial class LoanReturn
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(475, 323);
         Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBoxID);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "LoanReturn";
         ResumeLayout(false);
         PerformLayout();

@@ -41,7 +41,7 @@ partial class MemberUpdate
         // 
         // textBoxID
         // 
-        textBoxID.Location = new System.Drawing.Point(343, 107);
+        textBoxID.Location = new System.Drawing.Point(152, 52);
         textBoxID.Name = "textBoxID";
         textBoxID.PlaceholderText = "ID to update";
         textBoxID.Size = new System.Drawing.Size(100, 23);
@@ -49,7 +49,7 @@ partial class MemberUpdate
         // 
         // textBoxFirst
         // 
-        textBoxFirst.Location = new System.Drawing.Point(343, 160);
+        textBoxFirst.Location = new System.Drawing.Point(152, 95);
         textBoxFirst.Name = "textBoxFirst";
         textBoxFirst.PlaceholderText = "First name";
         textBoxFirst.Size = new System.Drawing.Size(100, 23);
@@ -57,7 +57,7 @@ partial class MemberUpdate
         // 
         // textBoxLast
         // 
-        textBoxLast.Location = new System.Drawing.Point(343, 211);
+        textBoxLast.Location = new System.Drawing.Point(152, 141);
         textBoxLast.Name = "textBoxLast";
         textBoxLast.PlaceholderText = "Last name";
         textBoxLast.Size = new System.Drawing.Size(100, 23);
@@ -65,7 +65,7 @@ partial class MemberUpdate
         // 
         // textBoxEmail
         // 
-        textBoxEmail.Location = new System.Drawing.Point(343, 270);
+        textBoxEmail.Location = new System.Drawing.Point(152, 183);
         textBoxEmail.Name = "textBoxEmail";
         textBoxEmail.PlaceholderText = "Email";
         textBoxEmail.Size = new System.Drawing.Size(100, 23);
@@ -73,7 +73,7 @@ partial class MemberUpdate
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(276, 338);
+        button1.Location = new System.Drawing.Point(93, 234);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(92, 54);
         button1.TabIndex = 4;
@@ -83,7 +83,7 @@ partial class MemberUpdate
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(416, 338);
+        button2.Location = new System.Drawing.Point(217, 234);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(92, 54);
         button2.TabIndex = 5;
@@ -95,13 +95,14 @@ partial class MemberUpdate
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(800, 450);
+        ClientSize = new System.Drawing.Size(398, 344);
         Controls.Add(button2);
         Controls.Add(button1);
         Controls.Add(textBoxEmail);
         Controls.Add(textBoxLast);
         Controls.Add(textBoxFirst);
         Controls.Add(textBoxID);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         Text = "MemberUpdate";
         ResumeLayout(false);
         PerformLayout();
