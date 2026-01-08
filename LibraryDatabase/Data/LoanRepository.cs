@@ -150,10 +150,11 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
             }
 
             
-            var insertLoan = new SqlCommand("INSERT INTO Loan (memberId, bookId, loanDate) VALUES (@memberId, @bookId, GETDATE())",connection, transaction);
+            var insertLoan = new SqlCommand("INSERT INTO Loan (memberId, bookId, loanDate) VALUES (@memberId, @bookId, @loanDate)",connection, transaction);
 
             insertLoan.Parameters.AddWithValue("@memberId", memberId);
             insertLoan.Parameters.AddWithValue("@bookId", bookId);
+            insertLoan.Parameters.AddWithValue("@loanDate", DateTime.Now);
             insertLoan.ExecuteNonQuery();
 
             var updateBook = new SqlCommand("UPDATE Book SET isAvailable = 0 WHERE id = @id", connection, transaction);
@@ -192,9 +193,10 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
 
             int bookId = (int)bookIdObj;
             
-            var updateLoan = new SqlCommand("UPDATE Loan SET returnDate = GETDATE() WHERE id = @id", connection, transaction);
+            var updateLoan = new SqlCommand("UPDATE Loan SET returnDate = @returnDate WHERE id = @id", connection, transaction);
 
             updateLoan.Parameters.AddWithValue("@id", loanId);
+            updateLoan.Parameters.AddWithValue("@returnDate", DateTime.Now);
             updateLoan.ExecuteNonQuery();
             
             var updateBook = new SqlCommand("UPDATE Book SET isAvailable = 1 WHERE id = @bookId", connection, transaction);
