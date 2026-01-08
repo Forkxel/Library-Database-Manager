@@ -5,20 +5,15 @@ namespace LibraryDatabase.Data;
 
 public abstract class BaseRepository
 {
+    protected string connectionString;
+
+    protected BaseRepository()
+    {
+        connectionString = ConfigLoader.Load().ConnectionString;
+    }
+    
     protected SqlConnection GetConnection()
     {
-        try
-        {
-            var connectionString = ConfigurationManager.ConnectionStrings["LibraryDb"].ConnectionString;
-            
-            var connection = new SqlConnection(connectionString);
-            
-            return connection;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Error connecting to database" + e.Message);
-        }
-        return null;
+        return new SqlConnection(connectionString);
     }
 }
