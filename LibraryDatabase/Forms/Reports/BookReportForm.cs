@@ -14,6 +14,14 @@ public partial class BookReportForm : Form
     
     private void LoadData()
     {
-        dataGridView1.DataSource = repository.GetBookLoanStats();
+        try
+        {
+            dataGridView1.DataSource = repository.GetBookLoanStats();
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show("Error loading book report " +  e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        
     }
 }
