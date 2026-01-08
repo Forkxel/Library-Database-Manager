@@ -10,8 +10,9 @@ public class ReportRepository : BaseRepository
         var result = new List<AuthorLoanReport>();
 
         using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT AuthorName, LoanCount, FirstLoan, LastLoan FROM AuthorLoanStats", connection);
+        using var command = new SqlCommand("SELECT AuthorName, LoanCount, FirstLoan, LastLoan FROM authorLoanStats", connection);
 
+        connection.Open();
         using var reader = command.ExecuteReader();
 
         while (reader.Read())

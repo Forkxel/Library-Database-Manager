@@ -3,6 +3,7 @@ using LibraryDatabase.Forms.Author;
 using LibraryDatabase.Forms.Book;
 using LibraryDatabase.Forms.Loan;
 using LibraryDatabase.Forms.Member;
+using LibraryDatabase.Forms.Reports;
 
 namespace LibraryDatabase.Forms;
 
@@ -41,5 +42,22 @@ public partial class MainForm : Form
     {
         LoanForm  loanForm = new LoanForm();
         loanForm.ShowDialog();
+    }
+
+    private void btnExit_Click(object sender, EventArgs e)
+    {
+        Environment.Exit(0);
+    }
+
+    private void btnReports_Click(object sender, EventArgs e)
+    {
+        AuthorReportForm reportForm = new AuthorReportForm();
+        reportForm.ShowDialog();
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        BookReportForm reportForm = new BookReportForm();
+        reportForm.ShowDialog();
     }
 }

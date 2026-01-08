@@ -10,19 +10,42 @@ public class BookLoanRepository : BaseRepository
         var result = new List<BookLoanReport>();
 
         using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT BookTitle, LoanCount, FirstLoan, LastReturn FROM BookLoanStats", connection);
+        using var command = new SqlCommand("SELECT BookTitle, Category, LoanCount, FirstLoan, LastReturn FROM bookLoanStats", connection);
 
         connection.Open();
         using var reader = command.ExecuteReader();
 
         while (reader.Read())
         {
+            DateTime? firstLoan;
+
+            if (reader.IsDBNull(3))
+            {
+                firstLoan = null;
+            }
+            else
+            {
+                firstLoan = reader.GetDateTime(3);
+            }
+            
+            DateTime? lastReturn;
+
+            if (reader.IsDBNull(4))
+            {
+                lastReturn = null;
+            }
+            else
+            {
+                lastReturn = reader.GetDateTime(4);
+            }
+
             result.Add(new BookLoanReport
             {
                 BookTitle = reader.GetString(0),
-                LoanCount = reader.GetInt32(1),
-                FirstLoan = reader.GetDateTime(2),
-                LastReturn = reader.GetDateTime(3)
+                Category = reader.GetString(1),
+                LoanCount = reader.GetInt32(2),
+                FirstLoan = firstLoan,
+                LastReturn = lastReturn
             });
         }
 

@@ -70,6 +70,12 @@
       <Compile Update="Forms\Loan\LoanReturn.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Forms\Reports\AuthorReportForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Forms\Reports\BookReportForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>
