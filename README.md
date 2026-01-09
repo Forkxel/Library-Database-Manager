@@ -29,7 +29,7 @@ Windows Forms application for managing library database.
 1. Download the zip file from the GitHub here: https://github.com/Forkxel/Library-Database-Manager.git.
 2. Extract the zip file and open LibraryDatabaseManager-exe folder.
 3. Create new json file in the folder called appsettings.json.
-4. Open the file and copy the following.
+4. Open the file and paste the following.
 ```
 {
   "ConnectionString": "Server=SERVER_EXAMPLE;Database=DATABASE_EXAMPLE;User Id=USER_EXAMPLE;Password=PASSWORD_EXAMPLE;"
