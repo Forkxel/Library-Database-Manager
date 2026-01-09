@@ -7,8 +7,15 @@ public class AppConfig
     public string ConnectionString { get; set; }
 }
 
+/// <summary>
+/// Class for loading JSON config file
+/// </summary>
 public static class ConfigLoader
 {
+    /// <summary>
+    /// Loads connection string from the JSON file
+    /// </summary>
+    /// <returns>Connection string</returns>
     public static AppConfig Load()
     {
         var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"appsettings.json");
