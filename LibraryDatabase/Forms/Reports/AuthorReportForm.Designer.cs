@@ -55,24 +55,28 @@ partial class AuthorReportForm
         Column1.DataPropertyName = "AuthorName";
         Column1.HeaderText = "Name";
         Column1.Name = "Column1";
+        Column1.ReadOnly = true;
         // 
         // Column2
         // 
         Column2.DataPropertyName = "LoanCount";
         Column2.HeaderText = "Loan count";
         Column2.Name = "Column2";
+        Column2.ReadOnly = true;
         // 
         // Column3
         // 
         Column3.DataPropertyName = "FirstLoan";
         Column3.HeaderText = "First loan";
         Column3.Name = "Column3";
+        Column3.ReadOnly = true;
         // 
         // Column4
         // 
         Column4.DataPropertyName = "LastLoan";
         Column4.HeaderText = "Last loan";
         Column4.Name = "Column4";
+        Column4.ReadOnly = true;
         // 
         // AuthorReportForm
         // 

@@ -43,6 +43,7 @@ partial class LoanReturn
         textBoxID.PlaceholderText = "ID to return";
         textBoxID.Size = new System.Drawing.Size(100, 23);
         textBoxID.TabIndex = 0;
+        textBoxID.TabStop = false;
         // 
         // button1
         // 

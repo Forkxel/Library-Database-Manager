@@ -32,6 +32,9 @@ partial class BookForm
     private void InitializeComponent()
     {
         dataGridView1 = new System.Windows.Forms.DataGridView();
+        UpdateButton = new System.Windows.Forms.Button();
+        DeleteButton = new System.Windows.Forms.Button();
+        AddButton = new System.Windows.Forms.Button();
         ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,9 +42,6 @@ partial class BookForm
         ColumnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnIsAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
         State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        UpdateButton = new System.Windows.Forms.Button();
-        DeleteButton = new System.Windows.Forms.Button();
-        AddButton = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
@@ -58,6 +58,36 @@ partial class BookForm
         dataGridView1.Size = new System.Drawing.Size(800, 350);
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
+        // 
+        // UpdateButton
+        // 
+        UpdateButton.Location = new System.Drawing.Point(32, 389);
+        UpdateButton.Name = "UpdateButton";
+        UpdateButton.Size = new System.Drawing.Size(75, 23);
+        UpdateButton.TabIndex = 1;
+        UpdateButton.Text = "Update";
+        UpdateButton.UseVisualStyleBackColor = true;
+        UpdateButton.Click += UpdateButton_Click;
+        // 
+        // DeleteButton
+        // 
+        DeleteButton.Location = new System.Drawing.Point(146, 389);
+        DeleteButton.Name = "DeleteButton";
+        DeleteButton.Size = new System.Drawing.Size(75, 23);
+        DeleteButton.TabIndex = 2;
+        DeleteButton.Text = "Delete";
+        DeleteButton.UseVisualStyleBackColor = true;
+        DeleteButton.Click += DeleteButton_Click;
+        // 
+        // AddButton
+        // 
+        AddButton.Location = new System.Drawing.Point(273, 389);
+        AddButton.Name = "AddButton";
+        AddButton.Size = new System.Drawing.Size(75, 23);
+        AddButton.TabIndex = 3;
+        AddButton.Text = "Add";
+        AddButton.UseVisualStyleBackColor = true;
+        AddButton.Click += AddButton_Click;
         // 
         // ColumnID
         // 
@@ -107,36 +137,6 @@ partial class BookForm
         State.HeaderText = "State";
         State.Name = "State";
         State.ReadOnly = true;
-        // 
-        // UpdateButton
-        // 
-        UpdateButton.Location = new System.Drawing.Point(32, 389);
-        UpdateButton.Name = "UpdateButton";
-        UpdateButton.Size = new System.Drawing.Size(75, 23);
-        UpdateButton.TabIndex = 1;
-        UpdateButton.Text = "Update";
-        UpdateButton.UseVisualStyleBackColor = true;
-        UpdateButton.Click += UpdateButton_Click;
-        // 
-        // DeleteButton
-        // 
-        DeleteButton.Location = new System.Drawing.Point(146, 389);
-        DeleteButton.Name = "DeleteButton";
-        DeleteButton.Size = new System.Drawing.Size(75, 23);
-        DeleteButton.TabIndex = 2;
-        DeleteButton.Text = "Delete";
-        DeleteButton.UseVisualStyleBackColor = true;
-        DeleteButton.Click += DeleteButton_Click;
-        // 
-        // AddButton
-        // 
-        AddButton.Location = new System.Drawing.Point(273, 389);
-        AddButton.Name = "AddButton";
-        AddButton.Size = new System.Drawing.Size(75, 23);
-        AddButton.TabIndex = 3;
-        AddButton.Text = "Add";
-        AddButton.UseVisualStyleBackColor = true;
-        AddButton.Click += AddButton_Click;
         // 
         // BookForm
         // 

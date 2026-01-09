@@ -32,12 +32,12 @@ partial class AuthorForm
     private void InitializeComponent()
     {
         dataGridView1 = new System.Windows.Forms.DataGridView();
-        ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        ColumnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        ColumnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
         buttonAdd = new System.Windows.Forms.Button();
         buttonUpdate = new System.Windows.Forms.Button();
         buttonDelete = new System.Windows.Forms.Button();
+        ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        ColumnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        ColumnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
@@ -51,24 +51,6 @@ partial class AuthorForm
         dataGridView1.Size = new System.Drawing.Size(470, 330);
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
-        // 
-        // ColumnID
-        // 
-        ColumnID.DataPropertyName = "AuthorID";
-        ColumnID.HeaderText = "ID";
-        ColumnID.Name = "ColumnID";
-        // 
-        // ColumnFirstName
-        // 
-        ColumnFirstName.DataPropertyName = "FirstName";
-        ColumnFirstName.HeaderText = "First name";
-        ColumnFirstName.Name = "ColumnFirstName";
-        // 
-        // ColumnLastName
-        // 
-        ColumnLastName.DataPropertyName = "LastName";
-        ColumnLastName.HeaderText = "Last name";
-        ColumnLastName.Name = "ColumnLastName";
         // 
         // buttonAdd
         // 
@@ -99,6 +81,27 @@ partial class AuthorForm
         buttonDelete.Text = "Delete";
         buttonDelete.UseVisualStyleBackColor = true;
         buttonDelete.Click += buttonDelete_Click;
+        // 
+        // ColumnID
+        // 
+        ColumnID.DataPropertyName = "AuthorID";
+        ColumnID.HeaderText = "ID";
+        ColumnID.Name = "ColumnID";
+        ColumnID.ReadOnly = true;
+        // 
+        // ColumnFirstName
+        // 
+        ColumnFirstName.DataPropertyName = "FirstName";
+        ColumnFirstName.HeaderText = "First name";
+        ColumnFirstName.Name = "ColumnFirstName";
+        ColumnFirstName.ReadOnly = true;
+        // 
+        // ColumnLastName
+        // 
+        ColumnLastName.DataPropertyName = "LastName";
+        ColumnLastName.HeaderText = "Last name";
+        ColumnLastName.Name = "ColumnLastName";
+        ColumnLastName.ReadOnly = true;
         // 
         // AuthorForm
         // 

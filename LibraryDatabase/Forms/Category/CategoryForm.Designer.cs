@@ -32,11 +32,11 @@ partial class CategoryForm
     private void InitializeComponent()
     {
         dataGridView1 = new System.Windows.Forms.DataGridView();
-        ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
         buttonAdd = new System.Windows.Forms.Button();
         buttonUpdate = new System.Windows.Forms.Button();
         buttonDelete = new System.Windows.Forms.Button();
+        ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+        ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
@@ -50,18 +50,6 @@ partial class CategoryForm
         dataGridView1.Size = new System.Drawing.Size(405, 331);
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
-        // 
-        // ColumnID
-        // 
-        ColumnID.DataPropertyName = "CategoryId";
-        ColumnID.HeaderText = "ID";
-        ColumnID.Name = "ColumnID";
-        // 
-        // ColumnName
-        // 
-        ColumnName.DataPropertyName = "CategoryName";
-        ColumnName.HeaderText = "Name";
-        ColumnName.Name = "ColumnName";
         // 
         // buttonAdd
         // 
@@ -92,6 +80,20 @@ partial class CategoryForm
         buttonDelete.Text = "Delete";
         buttonDelete.UseVisualStyleBackColor = true;
         buttonDelete.Click += buttonDelete_Click;
+        // 
+        // ColumnID
+        // 
+        ColumnID.DataPropertyName = "CategoryId";
+        ColumnID.HeaderText = "ID";
+        ColumnID.Name = "ColumnID";
+        ColumnID.ReadOnly = true;
+        // 
+        // ColumnName
+        // 
+        ColumnName.DataPropertyName = "CategoryName";
+        ColumnName.HeaderText = "Name";
+        ColumnName.Name = "ColumnName";
+        ColumnName.ReadOnly = true;
         // 
         // CategoryForm
         // 

@@ -32,33 +32,6 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         return loans;
     }
 
-    public Loan? GetById(int id)
-    {
-        using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Loan WHERE id = @id", connection);
-        
-        command.Parameters.AddWithValue("@id", id);
-        connection.Open();
-        
-        using var reader = command.ExecuteReader();
-
-        if (!reader.Read())
-        {
-            return null;
-        }
-
-        var loan = new Loan
-        {
-            LoanId = reader.GetInt32(0),
-            MemberId = reader.GetInt32(1),
-            BookId = reader.GetInt32(2),
-            LoanDate = reader.GetDateTime(3),
-            ReturnDate = reader.GetDateTime(4)
-        };
-        
-        return loan;
-    }
-
     public void Add(Loan entity)
     {
         using var connection = GetConnection();

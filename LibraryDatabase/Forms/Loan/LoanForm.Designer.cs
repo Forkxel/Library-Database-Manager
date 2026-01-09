@@ -32,13 +32,13 @@ partial class LoanForm
     private void InitializeComponent()
     {
         dataGridView1 = new System.Windows.Forms.DataGridView();
+        buttonBorrow = new System.Windows.Forms.Button();
+        buttonReturn = new System.Windows.Forms.Button();
         ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
         Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
         Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
         Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
         Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        buttonBorrow = new System.Windows.Forms.Button();
-        buttonReturn = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
         // 
@@ -52,36 +52,6 @@ partial class LoanForm
         dataGridView1.Size = new System.Drawing.Size(632, 328);
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
-        // 
-        // ColumnID
-        // 
-        ColumnID.DataPropertyName = "LoanId";
-        ColumnID.HeaderText = "ID";
-        ColumnID.Name = "ColumnID";
-        // 
-        // Column1
-        // 
-        Column1.DataPropertyName = "MemberId";
-        Column1.HeaderText = "Member ID";
-        Column1.Name = "Column1";
-        // 
-        // Column2
-        // 
-        Column2.DataPropertyName = "BookId";
-        Column2.HeaderText = "Book ID";
-        Column2.Name = "Column2";
-        // 
-        // Column3
-        // 
-        Column3.DataPropertyName = "LoanDate";
-        Column3.HeaderText = "Loan date";
-        Column3.Name = "Column3";
-        // 
-        // Column4
-        // 
-        Column4.DataPropertyName = "ReturnDate";
-        Column4.HeaderText = "Return date";
-        Column4.Name = "Column4";
         // 
         // buttonBorrow
         // 
@@ -102,6 +72,41 @@ partial class LoanForm
         buttonReturn.Text = "Return book";
         buttonReturn.UseVisualStyleBackColor = true;
         buttonReturn.Click += buttonReturn_Click;
+        // 
+        // ColumnID
+        // 
+        ColumnID.DataPropertyName = "LoanId";
+        ColumnID.HeaderText = "ID";
+        ColumnID.Name = "ColumnID";
+        ColumnID.ReadOnly = true;
+        // 
+        // Column1
+        // 
+        Column1.DataPropertyName = "MemberId";
+        Column1.HeaderText = "Member ID";
+        Column1.Name = "Column1";
+        Column1.ReadOnly = true;
+        // 
+        // Column2
+        // 
+        Column2.DataPropertyName = "BookId";
+        Column2.HeaderText = "Book ID";
+        Column2.Name = "Column2";
+        Column2.ReadOnly = true;
+        // 
+        // Column3
+        // 
+        Column3.DataPropertyName = "LoanDate";
+        Column3.HeaderText = "Loan date";
+        Column3.Name = "Column3";
+        Column3.ReadOnly = true;
+        // 
+        // Column4
+        // 
+        Column4.DataPropertyName = "ReturnDate";
+        Column4.HeaderText = "Return date";
+        Column4.Name = "Column4";
+        Column4.ReadOnly = true;
         // 
         // LoanForm
         // 

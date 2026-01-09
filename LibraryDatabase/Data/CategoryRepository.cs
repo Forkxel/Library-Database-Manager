@@ -27,30 +27,6 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         return categories;
     }
 
-    public Modules.Category? GetById(int id)
-    {
-        using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM CATEGORY WHERE id=@id", connection);
-        
-        command.Parameters.AddWithValue("@id", id);
-        
-        connection.Open();
-        using var reader = command.ExecuteReader();
-
-        if (!reader.Read())
-        {
-            return null;
-        }
-
-        var category = new Modules.Category
-        {
-            CategoryId = reader.GetInt32(0),
-            CategoryName = reader.GetString(1)
-        };
-        
-        return category;
-    }
-
     public void Add(Modules.Category entity)
     {
         using var connection = GetConnection();

@@ -38,11 +38,11 @@ partial class LoanBorrow
         textBoxBook = new System.Windows.Forms.TextBox();
         splitContainer1 = new System.Windows.Forms.SplitContainer();
         dataGridView1 = new System.Windows.Forms.DataGridView();
+        dataGridView2 = new System.Windows.Forms.DataGridView();
         ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnFirst = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridView2 = new System.Windows.Forms.DataGridView();
         ColumnIDBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
         ColumnAuthorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,30 +136,6 @@ partial class LoanBorrow
         dataGridView1.TabIndex = 0;
         dataGridView1.Text = "dataGridView1";
         // 
-        // ColumnID
-        // 
-        ColumnID.DataPropertyName = "MemberId";
-        ColumnID.HeaderText = "ID";
-        ColumnID.Name = "ColumnID";
-        // 
-        // ColumnFirst
-        // 
-        ColumnFirst.DataPropertyName = "FirstName";
-        ColumnFirst.HeaderText = "First name";
-        ColumnFirst.Name = "ColumnFirst";
-        // 
-        // ColumnLast
-        // 
-        ColumnLast.DataPropertyName = "LastName";
-        ColumnLast.HeaderText = "Last name";
-        ColumnLast.Name = "ColumnLast";
-        // 
-        // ColumnEmail
-        // 
-        ColumnEmail.DataPropertyName = "Email";
-        ColumnEmail.HeaderText = "Email";
-        ColumnEmail.Name = "ColumnEmail";
-        // 
         // dataGridView2
         // 
         dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -171,47 +147,82 @@ partial class LoanBorrow
         dataGridView2.TabIndex = 0;
         dataGridView2.Text = "dataGridView2";
         // 
+        // ColumnID
+        // 
+        ColumnID.DataPropertyName = "MemberId";
+        ColumnID.HeaderText = "ID";
+        ColumnID.Name = "ColumnID";
+        ColumnID.ReadOnly = true;
+        // 
+        // ColumnFirst
+        // 
+        ColumnFirst.DataPropertyName = "FirstName";
+        ColumnFirst.HeaderText = "First name";
+        ColumnFirst.Name = "ColumnFirst";
+        ColumnFirst.ReadOnly = true;
+        // 
+        // ColumnLast
+        // 
+        ColumnLast.DataPropertyName = "LastName";
+        ColumnLast.HeaderText = "Last name";
+        ColumnLast.Name = "ColumnLast";
+        ColumnLast.ReadOnly = true;
+        // 
+        // ColumnEmail
+        // 
+        ColumnEmail.DataPropertyName = "Email";
+        ColumnEmail.HeaderText = "Email";
+        ColumnEmail.Name = "ColumnEmail";
+        ColumnEmail.ReadOnly = true;
+        // 
         // ColumnIDBook
         // 
         ColumnIDBook.DataPropertyName = "BookId";
         ColumnIDBook.HeaderText = "ID";
         ColumnIDBook.Name = "ColumnIDBook";
+        ColumnIDBook.ReadOnly = true;
         // 
         // ColumnTitle
         // 
         ColumnTitle.DataPropertyName = "BookTitle";
         ColumnTitle.HeaderText = "Title";
         ColumnTitle.Name = "ColumnTitle";
+        ColumnTitle.ReadOnly = true;
         // 
         // ColumnAuthorID
         // 
         ColumnAuthorID.DataPropertyName = "AuthorId";
         ColumnAuthorID.HeaderText = "Author ID";
         ColumnAuthorID.Name = "ColumnAuthorID";
+        ColumnAuthorID.ReadOnly = true;
         // 
         // ColumnCategoryID
         // 
         ColumnCategoryID.DataPropertyName = "CategoryId";
         ColumnCategoryID.HeaderText = "Category ID";
         ColumnCategoryID.Name = "ColumnCategoryID";
+        ColumnCategoryID.ReadOnly = true;
         // 
         // ColumnPrice
         // 
         ColumnPrice.DataPropertyName = "Price";
         ColumnPrice.HeaderText = "Price";
         ColumnPrice.Name = "ColumnPrice";
+        ColumnPrice.ReadOnly = true;
         // 
         // ColumnIsAvailable
         // 
         ColumnIsAvailable.DataPropertyName = "isAvailable";
         ColumnIsAvailable.HeaderText = "Is available";
         ColumnIsAvailable.Name = "ColumnIsAvailable";
+        ColumnIsAvailable.ReadOnly = true;
         // 
         // ColumnState
         // 
         ColumnState.DataPropertyName = "State";
         ColumnState.HeaderText = "State";
         ColumnState.Name = "ColumnState";
+        ColumnState.ReadOnly = true;
         // 
         // LoanBorrow
         // 

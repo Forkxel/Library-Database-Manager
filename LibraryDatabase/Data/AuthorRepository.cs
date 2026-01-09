@@ -28,31 +28,6 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         return authors;
     }
 
-    public Modules.Author? GetById(int id)
-    {
-        using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Author WHERE id = @id", connection);
-        
-        command.Parameters.AddWithValue("@id", id);
-        
-        connection.Open();
-        using var reader = command.ExecuteReader();
-        
-        if (!reader.Read())
-        {
-            return null;
-        }
-        
-        var author = new Modules.Author
-        {
-            AuthorID = reader.GetInt32(0),
-            FirstName = reader.GetString(1),
-            LastName = reader.GetString(2)
-        };
-        
-        return author;
-    }
-
     public void Add(Modules.Author entity)
     {
         using var connection = GetConnection();

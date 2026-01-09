@@ -33,35 +33,6 @@ public class BookRepository : BaseRepository, IRepository<Book>
         return books;
     }
 
-    public Book? GetById(int id)
-    {
-        using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Book WHERE id = @id", connection);
-        
-        command.Parameters.AddWithValue("@id", id);
-        connection.Open();
-        
-        using var reader = command.ExecuteReader();
-        
-        if (!reader.Read())
-        {
-            return null;
-        }
-
-        var book = new Book
-        {
-            BookId = reader.GetInt32(0),
-            BookTitle = reader.GetString(1),
-            CategoryId = reader.GetInt32(2),
-            AuthorId = reader.GetInt32(3),
-            isAvailable = reader.GetBoolean(4),
-            Price = reader.GetDecimal(5),
-            State = Enum.Parse<State>(reader.GetString(6))
-        };
-        
-        return book;
-    }
-
     public void Add(Book entity)
     {
         using var connection = GetConnection();

@@ -56,30 +56,35 @@ partial class BookReportForm
         Column1.DataPropertyName = "BookTitle";
         Column1.HeaderText = "Title";
         Column1.Name = "Column1";
+        Column1.ReadOnly = true;
         // 
         // Column2
         // 
         Column2.DataPropertyName = "Category";
         Column2.HeaderText = "Category";
         Column2.Name = "Column2";
+        Column2.ReadOnly = true;
         // 
         // Column3
         // 
         Column3.DataPropertyName = "LoanCount";
         Column3.HeaderText = "Loan count";
         Column3.Name = "Column3";
+        Column3.ReadOnly = true;
         // 
         // Column4
         // 
         Column4.DataPropertyName = "FirstLoan";
         Column4.HeaderText = "First loan";
         Column4.Name = "Column4";
+        Column4.ReadOnly = true;
         // 
         // Column5
         // 
         Column5.DataPropertyName = "LastReturn";
         Column5.HeaderText = "Last return";
         Column5.Name = "Column5";
+        Column5.ReadOnly = true;
         // 
         // BookReportForm
         // 

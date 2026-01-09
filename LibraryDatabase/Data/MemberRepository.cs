@@ -29,32 +29,6 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
         return members;
     }
 
-    public Modules.Member? GetById(int id)
-    {
-        using var connection = GetConnection();
-        using var command = new SqlCommand("SELECT * FROM Members WHERE MemberID = @id", connection);
-        
-        command.Parameters.AddWithValue("@id", id);
-        connection.Open();
-        
-        using var reader = command.ExecuteReader();
-
-        if (!reader.Read())
-        {
-            return null;
-        }
-
-        var member = new Modules.Member
-        {
-            MemberID = reader.GetInt32(0),
-            FirstName = reader.GetString(1),
-            LastName = reader.GetString(2),
-            Email = reader.GetString(3)
-        };
-        
-        return member;
-    }
-
     public void Add(Modules.Member entity)
     {
         using var connection = GetConnection();
@@ -109,7 +83,7 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
     public void Delete(int id)
     {
         using var connection = GetConnection();
-        using var command = new SqlCommand("DELETE FROM Members WHERE MemberID = @id", connection);
+        using var command = new SqlCommand("DELETE FROM Members WHERE id = @id", connection);
         
         command.Parameters.AddWithValue("@id", id);
         
