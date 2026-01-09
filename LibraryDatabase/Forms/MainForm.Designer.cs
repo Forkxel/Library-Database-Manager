@@ -38,12 +38,14 @@ partial class MainForm
         Reports = new System.Windows.Forms.GroupBox();
         button7 = new System.Windows.Forms.Button();
         button8 = new System.Windows.Forms.Button();
+        buttonReset = new System.Windows.Forms.Button();
         groupBox1.SuspendLayout();
         Reports.SuspendLayout();
         SuspendLayout();
         // 
         // groupBox1
         // 
+        groupBox1.Controls.Add(buttonReset);
         groupBox1.Controls.Add(button2);
         groupBox1.Controls.Add(button3);
         groupBox1.Controls.Add(button4);
@@ -52,7 +54,7 @@ partial class MainForm
         groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
         groupBox1.Location = new System.Drawing.Point(0, 0);
         groupBox1.Name = "groupBox1";
-        groupBox1.Size = new System.Drawing.Size(462, 246);
+        groupBox1.Size = new System.Drawing.Size(462, 289);
         groupBox1.TabIndex = 1;
         groupBox1.TabStop = false;
         groupBox1.Text = "Tables";
@@ -112,16 +114,16 @@ partial class MainForm
         Reports.Controls.Add(button7);
         Reports.Controls.Add(button8);
         Reports.Dock = System.Windows.Forms.DockStyle.Fill;
-        Reports.Location = new System.Drawing.Point(0, 246);
+        Reports.Location = new System.Drawing.Point(0, 289);
         Reports.Name = "Reports";
-        Reports.Size = new System.Drawing.Size(462, 234);
+        Reports.Size = new System.Drawing.Size(462, 191);
         Reports.TabIndex = 2;
         Reports.TabStop = false;
         Reports.Text = "Reports";
         // 
         // button7
         // 
-        button7.Location = new System.Drawing.Point(166, 132);
+        button7.Location = new System.Drawing.Point(166, 108);
         button7.Name = "button7";
         button7.Size = new System.Drawing.Size(112, 58);
         button7.TabIndex = 2;
@@ -131,13 +133,23 @@ partial class MainForm
         // 
         // button8
         // 
-        button8.Location = new System.Drawing.Point(166, 49);
+        button8.Location = new System.Drawing.Point(166, 28);
         button8.Name = "button8";
         button8.Size = new System.Drawing.Size(112, 58);
         button8.TabIndex = 1;
         button8.Text = "Author Report";
         button8.UseVisualStyleBackColor = true;
         button8.Click += button8_Click;
+        // 
+        // buttonReset
+        // 
+        buttonReset.Location = new System.Drawing.Point(166, 239);
+        buttonReset.Name = "buttonReset";
+        buttonReset.Size = new System.Drawing.Size(112, 31);
+        buttonReset.TabIndex = 5;
+        buttonReset.Text = "Reset database";
+        buttonReset.UseVisualStyleBackColor = true;
+        buttonReset.Click += buttonReset_Click;
         // 
         // MainForm
         // 
@@ -153,6 +165,8 @@ partial class MainForm
         Reports.ResumeLayout(false);
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Button buttonReset;
 
     private System.Windows.Forms.GroupBox Reports;
     private System.Windows.Forms.Button button7;

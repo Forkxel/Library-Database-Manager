@@ -1,4 +1,5 @@
 using LibraryDatabase.Category;
+using LibraryDatabase.Data;
 using LibraryDatabase.Forms.Author;
 using LibraryDatabase.Forms.Book;
 using LibraryDatabase.Forms.Loan;
@@ -54,5 +55,30 @@ public partial class MainForm : Form
     {
         BookReportForm reportForm = new BookReportForm();
         reportForm.ShowDialog();
+    }
+
+    private void buttonReset_Click(object sender, EventArgs e)
+    {
+        var result = MessageBox.Show(
+            "This will DELETE ALL DATA and recreate tables.\nAre you sure?",
+            "Database reset",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
+
+        if (result != DialogResult.Yes)
+            return;
+
+        try
+        {
+            var repo = new DatabaseRepository();
+            repo.DropTables();
+            repo.CreateTables();
+            
+            MessageBox.Show("Database successfully reset.");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Reset failed: " + ex.Message);
+        }
     }
 }
