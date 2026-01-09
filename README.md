@@ -44,8 +44,9 @@ Windows Forms application for managing library database.
         <li>Password - Your password.</li>
     </ul>
 </ul>
-
-6. Run the exe file.
+6. Open your SQL Server Managment Studio and connect to your database.
+7. Open the Export.sql from the zip file and execute it in the Studio.
+8. Run the exe file.
 
 ## Running the program
 
