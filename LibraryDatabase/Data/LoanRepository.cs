@@ -3,8 +3,15 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
+/// <summary>
+/// Class for handling loan table data from database
+/// </summary>
 public class LoanRepository : BaseRepository, IRepository<Loan>
 {
+    /// <summary>
+    /// Get all loans from the table
+    /// </summary>
+    /// <returns>List of all the loans</returns>
     public List<Loan> GetAll()
     {
         var loans = new List<Loan>();
@@ -32,6 +39,10 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         return loans;
     }
 
+    /// <summary>
+    /// Add new loan to the table
+    /// </summary>
+    /// <param name="entity">Loan to add</param>
     public void Add(Loan entity)
     {
         using var connection = GetConnection();
@@ -46,6 +57,10 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Updates loan based by number of filled boxes in form
+    /// </summary>
+    /// <param name="entity">Loan to update</param>
     public void Update(Loan entity)
     {
         var updates = new List<string>();
@@ -90,6 +105,10 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Deletes the loan from the table
+    /// </summary>
+    /// <param name="id">ID of the loan</param>
     public void Delete(int id)
     {
         using var connection = GetConnection();

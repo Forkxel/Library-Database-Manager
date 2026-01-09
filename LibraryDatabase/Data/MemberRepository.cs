@@ -3,8 +3,15 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
+/// <summary>
+/// Class for handling member table data from database
+/// </summary>
 public class MemberRepository : BaseRepository, IRepository<Modules.Member>
 {
+    /// <summary>
+    /// Get all members from the table
+    /// </summary>
+    /// <returns>List of all the members</returns>
     public List<Modules.Member> GetAll()
     {
         var members = new List<Modules.Member>();
@@ -29,6 +36,10 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
         return members;
     }
 
+    /// <summary>
+    /// Add new member to the table
+    /// </summary>
+    /// <param name="entity">Member to add</param>
     public void Add(Modules.Member entity)
     {
         using var connection = GetConnection();
@@ -42,6 +53,10 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Updates member based by number of filled boxes in form
+    /// </summary>
+    /// <param name="member">Member to update</param>
     public void Update(Modules.Member member)
     {
         var updates = new List<string>();
@@ -80,6 +95,10 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Deletes the member from the table
+    /// </summary>
+    /// <param name="id">ID of the member</param>
     public void Delete(int id)
     {
         using var connection = GetConnection();

@@ -3,8 +3,15 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
+/// <summary>
+/// Class for handling author table data from database
+/// </summary>
 public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
 {
+    /// <summary>
+    /// Get all authors from the table
+    /// </summary>
+    /// <returns>List of all the authors</returns>
     public List<Modules.Author> GetAll()
     {
         var authors = new List<Modules.Author>();
@@ -28,6 +35,10 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         return authors;
     }
 
+    /// <summary>
+    /// Add new author to the table
+    /// </summary>
+    /// <param name="entity">Author to add</param>
     public void Add(Modules.Author entity)
     {
         using var connection = GetConnection();
@@ -40,6 +51,10 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Updates author based by number of filled boxes in form
+    /// </summary>
+    /// <param name="entity">Author to update</param>
     public void Update(Modules.Author entity)
     {
         var updates = new List<string>();
@@ -72,6 +87,10 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Deletes the author from the table
+    /// </summary>
+    /// <param name="id">ID of the author</param>
     public void Delete(int id)
     {
         using var connection = GetConnection();
@@ -83,6 +102,10 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         command.ExecuteNonQuery();
     }
     
+    /// <summary>
+    /// Imports the authors from the csv file that user picks in file explorer
+    /// </summary>
+    /// <param name="filePath">file path</param>
     public void ImportAuthorsFromCsv(string filePath)
     {
         using var connection = GetConnection();

@@ -3,8 +3,15 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
+/// <summary>
+/// Class for Author statistics report
+/// </summary>
 public class ReportRepository : BaseRepository
 {
+    /// <summary>
+    /// Gets the statistics from database using view
+    /// </summary>
+    /// <returns>List of authors and their statistics</returns>
     public List<AuthorLoanReport> GetAuthorLoanStats()
     {
         var result = new List<AuthorLoanReport>();

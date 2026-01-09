@@ -2,8 +2,14 @@
 
 namespace LibraryDatabase.Data;
 
+/// <summary>
+/// Class for clearing the database
+/// </summary>
 public class DatabaseRepository : BaseRepository
 {
+    /// <summary>
+    /// Creates all the tables
+    /// </summary>
     public void CreateTables() 
     {
         using var connection = GetConnection();
@@ -81,6 +87,9 @@ public class DatabaseRepository : BaseRepository
         catch (Exception e) {}
     }
 
+    /// <summary>
+    /// Deletes all the tables
+    /// </summary>
     public void DropTables()
     {
         using var connection = GetConnection();

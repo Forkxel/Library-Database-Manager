@@ -4,8 +4,15 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
+/// <summary>
+/// Class for handling book table data from database
+/// </summary>
 public class BookRepository : BaseRepository, IRepository<Book>
 {
+    /// <summary>
+    /// Get all books from the table
+    /// </summary>
+    /// <returns>List of all the books</returns>
     public List<Book> GetAll()
     {
         var books = new List<Book>();
@@ -33,6 +40,10 @@ public class BookRepository : BaseRepository, IRepository<Book>
         return books;
     }
 
+    /// <summary>
+    /// Add new book to the table
+    /// </summary>
+    /// <param name="entity">Book to add</param>
     public void Add(Book entity)
     {
         using var connection = GetConnection();
@@ -50,6 +61,10 @@ public class BookRepository : BaseRepository, IRepository<Book>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Updates book based by number of filled boxes in form
+    /// </summary>
+    /// <param name="book">Book to update</param>
     public void Update(Book book)
     {
         var updates = new List<string>();
@@ -106,6 +121,10 @@ public class BookRepository : BaseRepository, IRepository<Book>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Deletes the book from the table
+    /// </summary>
+    /// <param name="id">ID of the book</param>
     public void Delete(int id)
     {
         using var connection = GetConnection();

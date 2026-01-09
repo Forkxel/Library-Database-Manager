@@ -3,8 +3,15 @@ using LibraryDatabase.Modules;
 
 namespace LibraryDatabase.Data;
 
+/// <summary>
+/// Class for handling category table data from database
+/// </summary>
 public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
 {
+    /// <summary>
+    /// Get all categories from the table
+    /// </summary>
+    /// <returns>List of all the categories</returns>
     public List<Modules.Category> GetAll()
     {
         var categories = new List<Modules.Category>();
@@ -27,6 +34,10 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         return categories;
     }
 
+    /// <summary>
+    /// Add new category to the table
+    /// </summary>
+    /// <param name="entity">Category to add</param>
     public void Add(Modules.Category entity)
     {
         using var connection = GetConnection();
@@ -38,6 +49,10 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Updates category based by number of filled boxes in form
+    /// </summary>
+    /// <param name="entity">Category to update</param>
     public void Update(Modules.Category entity)
     {
         var updates = new List<string>();
@@ -64,6 +79,10 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Deletes the category from the table
+    /// </summary>
+    /// <param name="id">ID of the category</param>
     public void Delete(int id)
     {
         using var connection = GetConnection();
@@ -75,6 +94,10 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         command.ExecuteNonQuery();
     }
     
+    /// <summary>
+    /// Imports the categories from the csv file that user picks in file explorer
+    /// </summary>
+    /// <param name="filePath">file path</param>
     public void ImportCategoriesFromCsv(string filePath)
     {
         using var connection = GetConnection();
