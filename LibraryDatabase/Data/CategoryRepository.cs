@@ -19,7 +19,6 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT * FROM CATEGORY", connection);
         
-        connection.Open();
         using var reader = command.ExecuteReader();
 
         while (reader.Read())
@@ -45,7 +44,6 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         
         command.Parameters.AddWithValue("@Name", entity.CategoryName);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
 
@@ -75,7 +73,6 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         
         using var connection = GetConnection();
         command.Connection = connection;
-        connection.Open();
         command.ExecuteNonQuery();
     }
 
@@ -90,7 +87,6 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
         
         command.Parameters.AddWithValue("@id", id);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
     
@@ -101,7 +97,6 @@ public class CategoryRepository : BaseRepository, IRepository<Modules.Category>
     public void ImportCategoriesFromCsv(string filePath)
     {
         using var connection = GetConnection();
-        connection.Open();
 
         using var transaction = connection.BeginTransaction();
 

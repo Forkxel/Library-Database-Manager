@@ -18,8 +18,7 @@ public class BookLoanRepository : BaseRepository
 
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT BookTitle, Category, LoanCount, FirstLoan, LastReturn FROM bookLoanStats", connection);
-
-        connection.Open();
+        
         using var reader = command.ExecuteReader();
 
         while (reader.Read())

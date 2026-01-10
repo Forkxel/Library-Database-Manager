@@ -19,7 +19,6 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT * FROM Loan", connection);
         
-        connection.Open();
         using var reader = command.ExecuteReader();
 
         while (reader.Read())
@@ -53,7 +52,6 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         command.Parameters.AddWithValue("@loanDate", entity.LoanDate);
         command.Parameters.AddWithValue("@returnDate", entity.ReturnDate);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
 
@@ -101,7 +99,6 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         
         using var connection = GetConnection();
         command.Connection = connection;
-        connection.Open();
         command.ExecuteNonQuery();
     }
 
@@ -116,7 +113,6 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
         
         command.Parameters.AddWithValue("@id", id);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
     
@@ -166,7 +162,6 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
     public void ReturnBook(int loanId)
     {
         using var connection = GetConnection();
-        connection.Open();
 
         using var transaction = connection.BeginTransaction();
 

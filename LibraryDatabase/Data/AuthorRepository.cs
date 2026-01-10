@@ -19,7 +19,6 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         using var connection = GetConnection(); 
         using var command = new SqlCommand("SELECT * FROM Author", connection);
         
-        connection.Open();
         using var reader = command.ExecuteReader();
 
         while (reader.Read())
@@ -47,7 +46,6 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         command.Parameters.AddWithValue("@firstName", entity.FirstName);
         command.Parameters.AddWithValue("@lastName", entity.LastName);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
 
@@ -83,7 +81,6 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         
         using var connection = GetConnection();
         command.Connection = connection;
-        connection.Open();
         command.ExecuteNonQuery();
     }
 
@@ -98,7 +95,6 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
         
         command.Parameters.AddWithValue("@id", id);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
     
@@ -109,7 +105,6 @@ public class AuthorRepository : BaseRepository, IRepository<Modules.Author>
     public void ImportAuthorsFromCsv(string filePath)
     {
         using var connection = GetConnection();
-        connection.Open();
 
         using var transaction = connection.BeginTransaction();
 

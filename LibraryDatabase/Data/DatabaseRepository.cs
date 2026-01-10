@@ -13,7 +13,6 @@ public class DatabaseRepository : BaseRepository
     public void CreateTables() 
     {
         using var connection = GetConnection();
-        connection.Open();
         
         try
         {
@@ -93,7 +92,6 @@ public class DatabaseRepository : BaseRepository
     public void DropTables()
     {
         using var connection = GetConnection();
-        connection.Open();
         
         try
         {

@@ -19,7 +19,6 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT * FROM Members", connection);
         
-        connection.Open();
         using var reader = command.ExecuteReader();
         
         while (reader.Read())
@@ -49,7 +48,6 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
         command.Parameters.AddWithValue("@lastName", entity.LastName);
         command.Parameters.AddWithValue("@email", entity.Email);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
 
@@ -91,7 +89,6 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
 
         using var connection = GetConnection();
         command.Connection = connection;
-        connection.Open();
         command.ExecuteNonQuery();
     }
 
@@ -106,7 +103,6 @@ public class MemberRepository : BaseRepository, IRepository<Modules.Member>
         
         command.Parameters.AddWithValue("@id", id);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
 }

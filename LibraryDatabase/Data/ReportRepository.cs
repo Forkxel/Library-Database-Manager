@@ -18,8 +18,7 @@ public class ReportRepository : BaseRepository
 
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT AuthorName, LoanCount, FirstLoan, LastLoan FROM authorLoanStats", connection);
-
-        connection.Open();
+        
         using var reader = command.ExecuteReader();
 
         while (reader.Read())

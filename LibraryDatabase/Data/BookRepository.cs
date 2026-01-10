@@ -20,7 +20,6 @@ public class BookRepository : BaseRepository, IRepository<Book>
         using var connection = GetConnection();
         using var command = new SqlCommand("SELECT * FROM Book", connection);
         
-        connection.Open();
         using var reader = command.ExecuteReader();
 
         while (reader.Read())
@@ -56,7 +55,6 @@ public class BookRepository : BaseRepository, IRepository<Book>
         command.Parameters.AddWithValue("@isAvailable", entity.isAvailable);
         command.Parameters.AddWithValue("@price", entity.Price);
         command.Parameters.AddWithValue("@state", entity.State!.Value.ToString());
-        connection.Open();
         
         command.ExecuteNonQuery();
     }
@@ -117,7 +115,6 @@ public class BookRepository : BaseRepository, IRepository<Book>
 
         using var conn = GetConnection();
         command.Connection = conn;
-        conn.Open();
         command.ExecuteNonQuery();
     }
 
@@ -132,7 +129,6 @@ public class BookRepository : BaseRepository, IRepository<Book>
         
         command.Parameters.AddWithValue("@id", id);
         
-        connection.Open();
         command.ExecuteNonQuery();
     }
 }
