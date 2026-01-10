@@ -21,7 +21,7 @@ public partial class AuthorReportForm : Form
         }
         catch (Exception e)
         {
-            MessageBox.Show("Error loading book report " +  e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Error loading author report " +  e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
     }

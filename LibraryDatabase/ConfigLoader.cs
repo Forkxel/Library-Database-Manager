@@ -22,7 +22,7 @@ public static class ConfigLoader
 
         if (!File.Exists(path))
         {
-            MessageBox.Show("Configuration file appsettings.json not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Configuration file appsettings.json not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
             Environment.Exit(1);
         }

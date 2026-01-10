@@ -25,7 +25,7 @@ public partial class AuthorForm : Form
         }
         catch (Exception e)
         {
-            MessageBox.Show("Error loading books " +  e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Error loading authors: " +  e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

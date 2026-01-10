@@ -1,6 +1,7 @@
-﻿using LibraryDatabase.Data;
+﻿using LibraryDatabase.Category;
+using LibraryDatabase.Data;
 
-namespace LibraryDatabase.Category;
+namespace LibraryDatabase.Forms.Category;
 
 public partial class CategoryForm : Form
 {
@@ -53,7 +54,7 @@ public partial class CategoryForm : Form
         }
         catch (Exception e)
         {
-            MessageBox.Show("Error loading books " +  e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Error loading categories: " +  e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

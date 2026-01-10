@@ -1,6 +1,6 @@
 ﻿using LibraryDatabase.Data;
 
-namespace LibraryDatabase.Category;
+namespace LibraryDatabase.Forms.Category;
 
 public partial class CategoryAdd : Form
 {
@@ -26,7 +26,7 @@ public partial class CategoryAdd : Form
         }
         catch (Exception exception)
         {
-            MessageBox.Show("Error adding author: " + exception.Message);
+            MessageBox.Show("Error adding categories: " + exception.Message);
         }
     }
 

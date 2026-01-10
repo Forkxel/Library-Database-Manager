@@ -2,6 +2,7 @@ using LibraryDatabase.Category;
 using LibraryDatabase.Data;
 using LibraryDatabase.Forms.Author;
 using LibraryDatabase.Forms.Book;
+using LibraryDatabase.Forms.Category;
 using LibraryDatabase.Forms.Loan;
 using LibraryDatabase.Forms.Member;
 using LibraryDatabase.Forms.Reports;

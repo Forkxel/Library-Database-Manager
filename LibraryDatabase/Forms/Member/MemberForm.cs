@@ -9,7 +9,7 @@ public partial class MemberForm : Form
     {
         InitializeComponent();
         repository = new MemberRepository();
-        dataGridView1.DataSource = repository.GetAll();
+        LoadData();
     }
 
     private void buttonAdd_Click(object sender, EventArgs e)
@@ -43,5 +43,17 @@ public partial class MemberForm : Form
     {
         var repo = new MemberRepository();
         dataGridView1.DataSource = repo.GetAll();
+    }
+
+    private void LoadData()
+    {
+        try
+        {
+            dataGridView1.DataSource = repository.GetAll();
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show("Error loading members: " +  e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

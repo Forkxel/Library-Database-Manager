@@ -28,7 +28,7 @@ public partial class MemberAdd : Form
         }
         catch (Exception exception)
         {
-            MessageBox.Show("Error adding author: " + exception.Message);
+            MessageBox.Show("Error adding member: " + exception.Message);
         }
     }
 

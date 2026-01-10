@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace LibraryDatabase.Category;
+namespace LibraryDatabase.Forms.Category;
 
 partial class CategoryAdd
 {
