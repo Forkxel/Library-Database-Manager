@@ -101,7 +101,7 @@ Reports are views from the database that show statistics for authors and books.
 
 This report show statistics of author like count of loans, first loan and last loan.
 
-#### 2. Exit application
+#### 2. Book report
 
 This report show statistics of book like count of loans, first loan and last return.
 
