@@ -28,6 +28,18 @@ public static class ConfigLoader
         }
         
         var json = File.ReadAllText(path);
-        return JsonSerializer.Deserialize<AppConfig>(json);
+        
+        AppConfig config = null;
+
+        try
+        {
+            config = JsonSerializer.Deserialize<AppConfig>(json);
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show("Configuration file is invalid", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            Environment.Exit(1);
+        }
+        return config;
     }
 }

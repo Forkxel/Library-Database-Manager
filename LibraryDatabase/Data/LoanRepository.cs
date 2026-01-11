@@ -119,7 +119,6 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
     public void BorrowBook(int bookId, int memberId)
     {
         using var connection = GetConnection();
-        connection.Open();
 
         using var transaction = connection.BeginTransaction();
 
@@ -199,5 +198,4 @@ public class LoanRepository : BaseRepository, IRepository<Loan>
             throw;
         }
     }
-
 }
