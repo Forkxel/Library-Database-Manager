@@ -1,6 +1,7 @@
 -- ========================================
 -- Project name: Library database manager
 -- Author name: Pavel Halík
+-- Email: pavel.halik06@gmail.com
 -- ========================================
 
 USE master;
