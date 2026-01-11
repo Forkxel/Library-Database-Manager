@@ -29,9 +29,23 @@ public partial class LoanBorrow : Form
 
     private void button_Click(object sender, EventArgs e)
     {
-        if (!int.TryParse(textBoxBook.Text, out int bookId) || !int.TryParse(textBoxMember.Text, out int memberId))
+        if (string.IsNullOrWhiteSpace(textBoxBook.Text) ||
+            string.IsNullOrWhiteSpace(textBoxMember.Text))
         {
-            MessageBox.Show("Invalid ID");
+            MessageBox.Show("Book ID and Member ID must be filled.",
+                "Validation error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            return;
+        }
+
+        if (!int.TryParse(textBoxBook.Text, out int bookId) ||
+            !int.TryParse(textBoxMember.Text, out int memberId))
+        {
+            MessageBox.Show("IDs must be valid numbers.",
+                "Validation error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
             return;
         }
 
@@ -45,9 +59,10 @@ public partial class LoanBorrow : Form
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Error borrowing: " + ex.Message);
+            MessageBox.Show("Error borrowing book: " + ex.Message);
         }
     }
+
 
     private void button1_Click(object sender, EventArgs e)
     {

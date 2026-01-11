@@ -11,25 +11,36 @@ public partial class AuthorAdd : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
+        if (string.IsNullOrWhiteSpace(textBoxFirst.Text) ||
+            string.IsNullOrWhiteSpace(textBoxLast.Text))
+        {
+            MessageBox.Show("First name and last name must be filled.",
+                "Validation error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            return;
+        }
+
         try
         {
             var author = new Modules.Author
             {
-                FirstName = textBoxFirst.Text,
-                LastName = textBoxLast.Text
+                FirstName = textBoxFirst.Text.Trim(),
+                LastName = textBoxLast.Text.Trim()
             };
-            
+
             var repo = new AuthorRepository();
             repo.Add(author);
-            
+
             DialogResult = DialogResult.OK;
             Close();
         }
-        catch (Exception exception)
+        catch (Exception ex)
         {
-            MessageBox.Show("Error adding author: " + exception.Message);
+            MessageBox.Show("Error adding author: " + ex.Message);
         }
     }
+
 
     private void button2_Click(object sender, EventArgs e)
     {

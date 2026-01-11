@@ -11,24 +11,34 @@ public partial class CategoryAdd : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
+        if (string.IsNullOrWhiteSpace(textBoxName.Text))
+        {
+            MessageBox.Show("Category name must not be empty.",
+                "Validation error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            return;
+        }
+
         try
         {
             var category = new Modules.Category
             {
-                CategoryName = textBoxName.Text
+                CategoryName = textBoxName.Text.Trim()
             };
-            
+
             var repo = new CategoryRepository();
             repo.Add(category);
-            
+
             DialogResult = DialogResult.OK;
             Close();
         }
-        catch (Exception exception)
+        catch (Exception ex)
         {
-            MessageBox.Show("Error adding categories: " + exception.Message);
+            MessageBox.Show("Error adding category: " + ex.Message);
         }
     }
+
 
     private void button2_Click(object sender, EventArgs e)
     {
@@ -72,5 +82,4 @@ public partial class CategoryAdd : Form
             return null;
         }
     }
-
 }
